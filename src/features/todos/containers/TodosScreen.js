@@ -7,6 +7,7 @@ import TodosWebview from '../components/TodosWebview';
 import ErrorBoundary from '../../../components/util/ErrorBoundary';
 import { TODOS_MIN_WIDTH, todosStore } from '..';
 import { todoActions } from '../actions';
+import ServicesStore from '../../../stores/ServicesStore';
 
 @inject('stores', 'actions') @observer
 class TodosScreen extends Component {
@@ -18,6 +19,7 @@ class TodosScreen extends Component {
     return (
       <ErrorBoundary>
         <TodosWebview
+          isTodosServiceActive={this.props.stores.services.isTodosServiceActive || false}
           isVisible={todosStore.isTodosPanelVisible}
           togglePanel={todoActions.toggleTodosPanel}
           handleClientMessage={todoActions.handleClientMessage}
@@ -25,6 +27,7 @@ class TodosScreen extends Component {
           width={todosStore.width}
           minWidth={TODOS_MIN_WIDTH}
           resize={width => todoActions.resize({ width })}
+          userAgent={todosStore.userAgent}
           isTodosIncludedInCurrentPlan
         />
       </ErrorBoundary>
@@ -37,5 +40,6 @@ export default TodosScreen;
 TodosScreen.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
     features: PropTypes.instanceOf(FeaturesStore).isRequired,
+    services: PropTypes.instanceOf(ServicesStore).isRequired,
   }).isRequired,
 };

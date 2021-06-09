@@ -5,14 +5,14 @@ import injectSheet from 'react-jss';
 import Webview from 'react-electron-web-view';
 import { Icon } from '@meetfranz/ui';
 import { defineMessages, intlShape } from 'react-intl';
+import classnames from 'classnames';
 
 import { mdiCheckAll } from '@mdi/js';
 import SettingsStore from '../../../stores/SettingsStore';
 
 import Appear from '../../../components/ui/effects/Appear';
 import UpgradeButton from '../../../components/ui/UpgradeButton';
-
-import userAgent from '../../../helpers/userAgent-helpers';
+import { TODOS_PARTITION_ID } from '..';
 
 // NOTE: https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
 function validURL(str) {
@@ -49,7 +49,7 @@ const styles = theme => ({
     borderLeft: [1, 'solid', theme.todos.todosLayer.borderLeftColor],
     zIndex: 300,
 
-    transform: ({ isVisible, width }) => `translateX(${isVisible ? 0 : width}px)`,
+    transform: ({ isVisible, width, isTodosServiceActive }) => `translateX(${isVisible || isTodosServiceActive ? 0 : width}px)`,
 
     '& webview': {
       height: '100%',
@@ -91,18 +91,26 @@ const styles = theme => ({
   premiumCTA: {
     marginTop: 40,
   },
+  isTodosServiceActive: {
+    width: 'calc(100% - 368px)',
+    position: 'absolute',
+    right: 0,
+    zIndex: 0,
+  },
 });
 
 @injectSheet(styles) @inject('stores') @observer
 class TodosWebview extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    isTodosServiceActive: PropTypes.bool.isRequired,
     isVisible: PropTypes.bool.isRequired,
     handleClientMessage: PropTypes.func.isRequired,
     setTodosWebview: PropTypes.func.isRequired,
     resize: PropTypes.func.isRequired,
     width: PropTypes.number.isRequired,
     minWidth: PropTypes.number.isRequired,
+    userAgent: PropTypes.string.isRequired,
     isTodosIncludedInCurrentPlan: PropTypes.bool.isRequired,
     stores: PropTypes.shape({
       settings: PropTypes.instanceOf(SettingsStore).isRequired,
@@ -130,11 +138,6 @@ class TodosWebview extends Component {
     this.node.addEventListener('mousemove', this.resizePanel.bind(this));
     this.node.addEventListener('mouseup', this.stopResize.bind(this));
     this.node.addEventListener('mouseleave', this.stopResize.bind(this));
-
-    const webViewInstance = this;
-    this.webview.addEventListener('dom-ready', () => {
-      webViewInstance.webview.setUserAgent(userAgent(true));
-    });
   }
 
   startResize = (event) => {
@@ -194,13 +197,18 @@ class TodosWebview extends Component {
   startListeningToIpcMessages() {
     const { handleClientMessage } = this.props;
     if (!this.webview) return;
-    this.webview.addEventListener('ipc-message', e => handleClientMessage(e.args[0]));
+    this.webview.addEventListener('ipc-message', (e) => {
+      // console.log(e);
+      handleClientMessage({ channel: e.channel, message: e.args[0] });
+    });
   }
 
   render() {
     const {
       classes,
+      isTodosServiceActive,
       isVisible,
+      userAgent,
       isTodosIncludedInCurrentPlan,
       stores,
     } = this.props;
@@ -222,13 +230,21 @@ class TodosWebview extends Component {
       isTodoUrlValid = validURL(todoUrl);
     }
 
+    const todosPanelStyle = {
+      width: isVisible ? width : 0,
+      borderLeftWidth: isVisible ? '1px' : 0,
+    };
 
     return (
       <div
-        className={classes.root}
-        style={{ width: isVisible ? width : 0 }}
+        className={classnames({
+          [classes.root]: true,
+          [classes.isTodosServiceActive]: isTodosServiceActive,
+        })}
+        style={todosPanelStyle}
         onMouseUp={() => this.stopResize()}
         ref={(node) => { this.node = node; }}
+        id="todos-panel"
       >
         <div
           className={classes.resizeHandler}
@@ -251,9 +267,10 @@ class TodosWebview extends Component {
               setTodosWebview(this.webview);
               this.startListeningToIpcMessages();
             }}
-            partition="persist:todos"
+            partition={TODOS_PARTITION_ID}
             preload="./features/todos/preload.js"
             ref={(webview) => { this.webview = webview ? webview.view : null; }}
+            useragent={userAgent}
             src={todoUrl}
           />
           )

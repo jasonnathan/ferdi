@@ -1,4 +1,5 @@
-import { remote, shell } from 'electron';
+import { shell } from 'electron';
+import { app } from '@electron/remote';
 import fs from 'fs-extra';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -16,8 +17,6 @@ import ErrorBoundary from '../../components/util/ErrorBoundary';
 import { FRANZ_DEV_DOCS, RECIPES_PATH } from '../../config';
 import { communityRecipesStore } from '../../features/communityRecipes';
 import RecipePreview from '../../models/RecipePreview';
-
-const { app } = remote;
 
 export default @inject('stores', 'actions') @observer class RecipesScreen extends Component {
   static propTypes = {
@@ -139,6 +138,8 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       ),
     ]) : recipeFilter;
 
+    const customWebsiteRecipe = recipePreviews.all.find(service => service.id === 'franz-custom-website');
+
     const isLoading = recipePreviews.featuredRecipePreviewsRequest.isExecuting
       || recipePreviews.allRecipePreviewsRequest.isExecuting
       || recipes.installRecipeRequest.isExecuting
@@ -150,6 +151,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       <ErrorBoundary>
         <RecipesDashboard
           recipes={allRecipes}
+          customWebsiteRecipe={customWebsiteRecipe}
           isLoading={isLoading}
           addedServiceCount={services.all.length}
           isPremium={user.data.isPremium}
@@ -163,7 +165,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
           recipeDirectory={recipeDirectory}
           openRecipeDirectory={async () => {
             await fs.ensureDir(recipeDirectory);
-            shell.openItem(recipeDirectory);
+            shell.openExternal(`file://${recipeDirectory}`);
           }}
           openDevDocs={() => {
             appActions.openExternalUrl({ url: FRANZ_DEV_DOCS });

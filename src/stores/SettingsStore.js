@@ -1,9 +1,12 @@
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import { getCurrentWindow } from '@electron/remote';
 import {
   action, computed, observable, reaction,
 } from 'mobx';
 import localStorage from 'mobx-localstorage';
-import { DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER } from '../config';
+import {
+  DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER, SEARCH_ENGINE_DDG,
+} from '../config';
 import { API } from '../environment';
 import { getLocale } from '../helpers/i18n-helpers';
 import { hash } from '../helpers/password-helpers';
@@ -39,7 +42,7 @@ export default class SettingsStore extends Store {
     reaction(
       () => this.all.app.autohideMenuBar,
       () => {
-        const currentWindow = remote.getCurrentWindow();
+        const currentWindow = getCurrentWindow();
         currentWindow.setMenuBarVisibility(!this.all.app.autohideMenuBar);
         currentWindow.autoHideMenuBar = this.all.app.autohideMenuBar;
       },
@@ -59,7 +62,7 @@ export default class SettingsStore extends Store {
 
     // Inactivity lock timer
     let inactivityTimer;
-    remote.getCurrentWindow().on('blur', () => {
+    getCurrentWindow().on('blur', () => {
       if (this.all.app.inactivityLock !== 0) {
         inactivityTimer = setTimeout(() => {
           this.actions.settings.update({
@@ -71,7 +74,7 @@ export default class SettingsStore extends Store {
         }, this.all.app.inactivityLock * 1000 * 60);
       }
     });
-    remote.getCurrentWindow().on('focus', () => {
+    getCurrentWindow().on('focus', () => {
       if (inactivityTimer) {
         clearTimeout(inactivityTimer);
       }
@@ -173,6 +176,7 @@ export default class SettingsStore extends Store {
           runInBackground: legacySettings.runInBackground,
           enableSystemTray: legacySettings.enableSystemTray,
           minimizeToSystemTray: legacySettings.minimizeToSystemTray,
+          closeToSystemTray: legacySettings.closeToSystemTray,
           server: API,
           isAppMuted: legacySettings.isAppMuted,
           enableGPUAcceleration: legacySettings.enableGPUAcceleration,
@@ -299,6 +303,22 @@ export default class SettingsStore extends Store {
       });
 
       debug('Migrated updates settings');
+    }
+
+    if (!this.all.migration['5.6.0-beta.6-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          searchEngine: SEARCH_ENGINE_DDG,
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          '5.6.0-beta.6-settings': true,
+        },
+      });
     }
   }
 }

@@ -1,17 +1,17 @@
-import electron from 'electron';
-import isDevMode from 'electron-is-dev';
 import ms from 'ms';
 import path from 'path';
+import { DEFAULT_ACCENT_COLOR } from '@meetfranz/theme';
 import { asarPath } from './helpers/asar-helpers';
 
-const app = process.type === 'renderer' ? electron.remote.app : electron.app;
-const nativeTheme = process.type === 'renderer' ? electron.remote.nativeTheme : electron.nativeTheme;
+const { app, nativeTheme } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
 
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
 export const LOCAL_API = 'http://localhost:3000';
-export const DEV_API = 'https://dev.franzinfra.com';
-export const LIVE_API = 'https://api.getferdi.com';
+export const DEV_FRANZ_API = 'https://dev.franzinfra.com';
+
+export const LIVE_FERDI_API = 'https://api.getferdi.com';
+export const LIVE_FRANZ_API = 'https://api.franzinfra.com';
 
 // URL used to submit debugger information, see https://github.com/getferdi/debugger
 export const DEBUG_API = 'https://debug.getferdi.com';
@@ -21,9 +21,8 @@ export const DEV_WS_API = 'wss://dev.franzinfra.com';
 export const LIVE_WS_API = 'wss://api.franzinfra.com';
 
 export const LOCAL_API_WEBSITE = 'http://localhost:3333';
-// export const DEV_API_WEBSITE = 'https://meetfranz.com';t
-export const DEV_API_WEBSITE = 'http://hash-58883791519ef6288c952316bdce7fb462283893.franzstaging.com/'; // TODO: revert me
-export const LIVE_API_WEBSITE = 'https://getferdi.com';
+export const DEV_API_FRANZ_WEBSITE = 'https://meetfranz.com';
+export const LIVE_API_FERDI_WEBSITE = 'https://getferdi.com';
 
 export const STATS_API = 'https://stats.franzinfra.com';
 
@@ -31,7 +30,7 @@ export const LOCAL_TODOS_FRONTEND_URL = 'http://localhost:4000';
 export const PRODUCTION_TODOS_FRONTEND_URL = 'https://app.franztodos.com';
 export const DEVELOPMENT_TODOS_FRONTEND_URL = 'https://development--franz-todos.netlify.com';
 
-export const GA_ID = !isDevMode ? 'UA-74126766-10' : 'UA-74126766-12';
+export const CDN_URL = 'https://cdn.franzinfra.com';
 
 export const KEEP_WS_LOADED_USID = '0a0aa000-0a0a-49a0-a000-a0a0a0a0a0a0';
 
@@ -49,6 +48,18 @@ export const NAVIGATION_BAR_BEHAVIOURS = {
   custom: 'Show navigation bar on custom websites only',
   always: 'Show navigation bar on all services',
   never: 'Never show navigation bar',
+};
+
+export const SEARCH_ENGINE_GOOGLE = 'google';
+export const SEARCH_ENGINE_DDG = 'duckDuckGo';
+export const SEARCH_ENGINE_NAMES = {
+  [SEARCH_ENGINE_GOOGLE]: 'Google',
+  [SEARCH_ENGINE_DDG]: 'DuckDuckGo',
+};
+
+export const SEARCH_ENGINE_URLS = {
+  [SEARCH_ENGINE_GOOGLE]: ({ searchTerm }) => `https://www.google.com/search?q=${searchTerm}`,
+  [SEARCH_ENGINE_DDG]: ({ searchTerm }) => `https://duckduckgo.com/?q=${searchTerm}`,
 };
 
 export const TODO_APPS = {
@@ -93,7 +104,10 @@ export const DEFAULT_APP_SETTINGS = {
   enableSystemTray: true,
   startMinimized: false,
   minimizeToSystemTray: false,
+  closeToSystemTray: false,
   privateNotifications: false,
+  clipboardNotifications: true,
+  notifyTaskBarOnMessage: false,
   showDisabledServices: true,
   showMessageBadgeWhenMuted: true,
   showDragArea: false,
@@ -108,7 +122,7 @@ export const DEFAULT_APP_SETTINGS = {
   serviceLimit: 5,
 
   // Ferdi specific options
-  server: LIVE_API,
+  server: LIVE_FERDI_API,
   predefinedTodoServer: 'https://app.franztodos.com',
   autohideMenuBar: false,
   lockingFeatureEnabled: false,
@@ -126,11 +140,15 @@ export const DEFAULT_APP_SETTINGS = {
   showServiceNavigationBar: false,
   universalDarkMode: true,
   adaptableDarkMode: true,
-  accentColor: '#7367f0',
+  accentColor: DEFAULT_ACCENT_COLOR,
   serviceRibbonWidth: 68,
   iconSize: iconSizeBias,
   sentry: false,
+  nightly: false,
   navigationBarBehaviour: 'custom',
+  searchEngine: SEARCH_ENGINE_DDG,
+  useVerticalStyle: false,
+  alwaysShowWorkspaces: false,
 };
 
 export const DEFAULT_FEATURES_CONFIG = {
@@ -155,9 +173,15 @@ export const DEFAULT_WINDOW_OPTIONS = {
   y: 0,
 };
 
-export const FRANZ_SERVICE_REQUEST = 'https://github.com/getferdi/recipes/issues/new/choose';
+export const GITHUB_FRANZ_URL = 'https://github.com/meetfranz';
+export const GITHUB_FERDI_URL = 'https://github.com/getferdi';
+export const FRANZ_SERVICE_REQUEST = `${GITHUB_FERDI_URL}/recipes/issues`;
 export const FRANZ_TRANSLATION = 'https://crowdin.com/project/getferdi';
 export const FRANZ_DEV_DOCS = 'http://bit.ly/franz-dev-hub';
+
+export const GITHUB_ORG_NAME = 'getferdi';
+export const GITHUB_FERDI_REPO_NAME = 'ferdi';
+export const GITHUB_NIGHTLIES_REPO_NAME = 'nightlies';
 
 export const FILE_SYSTEM_SETTINGS_TYPES = [
   'app',
@@ -167,6 +191,7 @@ export const FILE_SYSTEM_SETTINGS_TYPES = [
 export const LOCAL_SERVER = 'You are using Ferdi without a server';
 export const SERVER_NOT_LOADED = 'Ferdi::SERVER_NOT_LOADED';
 
+// TODO: This seems to be duplicated between here and 'index.js'
 // Set app directory before loading user modules
 if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('appData', process.env.FERDI_APPDATA_DIR);
@@ -179,6 +204,27 @@ if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
+const ELECTRON_IS_DEV_VAR = 'ELECTRON_IS_DEV';
+const NODE_ENV_VAR = 'NODE_ENV';
+
+// TODO Move this to environment.js and remove the re-export from there.
+export const isDevMode = (() => {
+  const isEnvVarSet = name => name in process.env;
+  if (isEnvVarSet(ELECTRON_IS_DEV_VAR)) {
+    // Copied from https://github.com/sindresorhus/electron-is-dev/blob/f05330b856782dac7987b10859bfd95ea6a187a6/index.js
+    // but electron-is-dev breaks in a renderer process, so we use the app import from above instead.
+    const electronIsDev = process.env[ELECTRON_IS_DEV_VAR];
+    return electronIsDev === 'true' || Number.parseInt(electronIsDev, 10) === 1;
+  }
+  if (isEnvVarSet(NODE_ENV_VAR)) {
+    return process.env[NODE_ENV_VAR] === 'development';
+  }
+  return !app.isPackaged;
+})();
+if (isDevMode) {
+  app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
+}
+
 export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
 
 // Replacing app.asar is not beautiful but unfortunately necessary
@@ -188,6 +234,7 @@ export const ALLOWED_PROTOCOLS = [
   'https:',
   'http:',
   'ftp:',
+  'ferdi:',
 ];
 
 export const PLANS = {

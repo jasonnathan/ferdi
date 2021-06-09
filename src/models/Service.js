@@ -1,9 +1,12 @@
 import { autorun, computed, observable } from 'mobx';
 import { ipcRenderer } from 'electron';
+import { webContents } from '@electron/remote';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
-import userAgent from '../helpers/userAgent-helpers';
+import { TODOS_RECIPE_ID, todosStore } from '../features/todos';
+import { isValidExternalURL } from '../helpers/url-helpers';
+import UserAgent from './UserAgent';
 
 const debug = require('debug')('Ferdi:Service');
 
@@ -17,7 +20,7 @@ export default class Service {
 
   recipe = '';
 
-  webview = null;
+  _webview = null;
 
   timer = null;
 
@@ -77,19 +80,21 @@ export default class Service {
 
   @observable restrictionType = null;
 
-  @observable disableHibernation = false;
+  @observable isHibernationEnabled = false;
+
+  @observable isHibernating = false;
 
   @observable lastUsed = Date.now(); // timestamp
 
-  @observable lastPoll = null;
+  @observable lastPoll = Date.now();
 
-  @observable lastPollAnswer = null;
+  @observable lastPollAnswer = Date.now();
 
   @observable lostRecipeConnection = false;
 
   @observable lostRecipeReloadAttempt = 0;
 
-  @observable chromelessUserAgent = false;
+  @observable userAgentModel = null;
 
   constructor(data, recipe) {
     if (!data) {
@@ -136,7 +141,7 @@ export default class Service {
 
     this.spellcheckerLanguage = data.spellcheckerLanguage !== undefined ? data.spellcheckerLanguage : this.spellcheckerLanguage;
 
-    this.disableHibernation = data.disableHibernation !== undefined ? data.disableHibernation : this.disableHibernation;
+    this.isHibernationEnabled = data.isHibernationEnabled !== undefined ? data.isHibernationEnabled : this.isHibernationEnabled;
 
     this.recipe = recipe;
 
@@ -150,6 +155,8 @@ export default class Service {
     if (hibernate && hibernateOnStartup && !isActive) {
       this.isHibernating = true;
     }
+
+    this.userAgentModel = new UserAgent(recipe.overrideUserAgent);
 
     autorun(() => {
       if (!this.isEnabled) {
@@ -175,6 +182,18 @@ export default class Service {
       url: this.url,
       hasCustomIcon: this.hasCustomIcon,
     };
+  }
+
+  get webview() {
+    if (this.recipe.id === TODOS_RECIPE_ID) {
+      return todosStore.webview;
+    }
+
+    return this._webview;
+  }
+
+  set webview(webview) {
+    this._webview = webview;
   }
 
   @computed get url() {
@@ -217,17 +236,18 @@ export default class Service {
   }
 
   @computed get userAgent() {
-    let ua = userAgent(this.chromelessUserAgent);
-    if (typeof this.recipe.overrideUserAgent === 'function') {
-      ua = this.recipe.overrideUserAgent();
-    }
+    return this.userAgentModel.userAgent;
+  }
 
-    return ua;
+  @computed get partition() {
+    return this.recipe.partition || `persist:service-${this.id}`;
   }
 
 
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
-    const webContents = this.webview.getWebContents();
+    const webviewWebContents = webContents.fromId(this.webview.getWebContentsId());
+
+    this.userAgentModel.setWebviewReference(this.webview);
 
     // If the recipe has implemented modifyRequestHeaders,
     // Send those headers to ipcMain so that it can be set in session
@@ -242,23 +262,6 @@ export default class Service {
       debug(this.name, 'modifyRequestHeaders is not defined in the recipe');
     }
 
-    const handleUserAgent = (url, forwardingHack = false) => {
-      if (url.startsWith('https://accounts.google.com')) {
-        if (!this.chromelessUserAgent) {
-          debug('Setting user agent to chromeless for url', url);
-          this.webview.setUserAgent(userAgent(true));
-          if (forwardingHack) {
-            this.webview.loadURL(url);
-          }
-          this.chromelessUserAgent = true;
-        }
-      } else if (this.chromelessUserAgent) {
-        debug('Setting user agent to contain chrome');
-        this.webview.setUserAgent(this.userAgent);
-        this.chromelessUserAgent = false;
-      }
-    };
-
     this.webview.addEventListener('ipc-message', e => handleIPCMessage({
       serviceId: this.id,
       channel: e.channel,
@@ -266,16 +269,24 @@ export default class Service {
     }));
 
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
-      openWindow({
-        event,
-        url,
-        frameName,
-        options,
-      });
+      debug('new-window', event, url, frameName, options);
+      if (!isValidExternalURL(event.url)) {
+        return;
+      }
+      if (event.disposition === 'foreground-tab' || event.disposition === 'background-tab') {
+        openWindow({
+          event,
+          url,
+          frameName,
+          options,
+        });
+      } else {
+        ipcRenderer.send('open-browser-window', {
+          url: event.url,
+          serviceId: this.id,
+        });
+      }
     });
-
-
-    this.webview.addEventListener('will-navigate', event => handleUserAgent(event.url, true));
 
     this.webview.addEventListener('did-start-loading', (event) => {
       debug('Did start load', this.name, event);
@@ -294,10 +305,7 @@ export default class Service {
     };
 
     this.webview.addEventListener('did-frame-finish-load', didLoad.bind(this));
-    this.webview.addEventListener('did-navigate', (event) => {
-      handleUserAgent(event.url);
-      didLoad();
-    });
+    this.webview.addEventListener('did-navigate', didLoad.bind(this));
 
     this.webview.addEventListener('did-fail-load', (event) => {
       debug('Service failed to load', this.name, event);
@@ -313,14 +321,14 @@ export default class Service {
       this.hasCrashed = true;
     });
 
-    webContents.on('login', (event, request, authInfo, callback) => {
+    webviewWebContents.on('login', (event, request, authInfo, callback) => {
       // const authCallback = callback;
       debug('browser login event', authInfo);
       event.preventDefault();
 
       if (authInfo.isProxy && authInfo.scheme === 'basic') {
         debug('Sending service echo ping');
-        webContents.send('get-service-id');
+        webviewWebContents.send('get-service-id');
 
         debug('Received service id', this.id);
 

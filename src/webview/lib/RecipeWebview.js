@@ -1,7 +1,7 @@
 const { ipcRenderer } = require('electron');
 const fs = require('fs-extra');
 
-const debug = require('debug')('Franz:Plugin:RecipeWebview');
+const debug = require('debug')('Ferdi:Plugin:RecipeWebview');
 
 class RecipeWebview {
   constructor() {
@@ -55,12 +55,12 @@ class RecipeWebview {
     const indirectInt = parseInt(indirect, 10);
 
     const count = {
-      direct: directInt > 0 ? directInt : 0,
-      indirect: indirectInt > 0 ? indirectInt : 0,
+      direct: Math.max(directInt, 0),
+      indirect: Math.max(indirectInt, 0),
     };
 
 
-    ipcRenderer.sendToHost('messages', count);
+    ipcRenderer.sendToHost('message-counts', count);
     Object.assign(this.countCache, count);
 
     debug('Sending badge count to host', count);
@@ -75,9 +75,9 @@ class RecipeWebview {
   injectCSS(...files) {
     files.forEach(async (file) => {
       if (await fs.exists(file)) {
-        const data = await fs.readFile(file);
+        const data = await fs.readFile(file, 'utf8');
         const styles = document.createElement('style');
-        styles.innerHTML = data.toString();
+        styles.innerHTML = data;
 
         document.querySelector('head').appendChild(styles);
 

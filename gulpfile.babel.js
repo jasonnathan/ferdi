@@ -7,15 +7,15 @@ import csso from 'gulp-csso';
 import terser from 'terser';
 import composer from 'gulp-uglify/composer';
 import htmlMin from 'gulp-htmlmin';
-import server from 'gulp-server-livereload';
+import connect from 'gulp-connect';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import sassVariables from 'gulp-sass-variables';
-import { moveSync, removeSync } from 'fs-extra';
+import { removeSync, outputJson } from 'fs-extra';
 import kebabCase from 'kebab-case';
 import hexRgb from 'hex-rgb';
-import path from 'path';
 
+import * as buildInfo from 'preval-build-info';
 import config from './package.json';
 
 import * as rawStyleConfig from './src/theme/default/legacy.js';
@@ -23,6 +23,10 @@ import * as rawStyleConfig from './src/theme/default/legacy.js';
 dotenv.config();
 
 const uglify = composer(terser, console);
+
+const isDevBuild = process.env.NODE_ENV === 'development';
+
+const getTargetEnv = isDevBuild ? 'development' : 'production';
 
 const styleConfig = Object.keys(rawStyleConfig).map((key) => {
   const isHex = /^#[0-9A-F]{6}$/i.test(rawStyleConfig[key]);
@@ -39,7 +43,9 @@ const paths = {
   src: 'src',
   dest: 'build',
   tmp: '.tmp',
+  dist: 'out',
   package: `out/${config.version}`,
+  buildInfoDestFile: 'build/buildInfo.json',
   recipes: {
     src: 'recipes/archives/*.tar.gz',
     dest: 'build/recipes/',
@@ -57,6 +63,10 @@ const paths = {
     src: 'src/styles/main.scss',
     dest: 'build/styles',
     watch: 'src/styles/**/*.scss',
+  },
+  verticalStyle: {
+    src: 'src/styles/vertical.scss',
+    dest: 'build/styles',
   },
   scripts: {
     src: 'src/**/*.js',
@@ -76,6 +86,7 @@ const paths = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 function _shell(cmd, cb) {
   console.log('executing', cmd);
   exec(
@@ -99,6 +110,7 @@ function _shell(cmd, cb) {
 const clean = (done) => {
   removeSync(paths.tmp);
   removeSync(paths.dest);
+  removeSync(paths.dist);
 
   done();
 };
@@ -127,14 +139,24 @@ export function mvLernaPackages() {
   return gulp.src(['packages/**']).pipe(gulp.dest(`${paths.dest}/packages`));
 }
 
+export function exportBuildInfo() {
+  var buildInfoData = {
+    timestamp: buildInfo.timestamp,
+    gitHashShort: buildInfo.gitHashShort,
+    gitBranch: buildInfo.gitBranch,
+  };
+  return outputJson(paths.buildInfoDestFile, buildInfoData);
+}
+
 export function html() {
   return gulp
     .src(paths.html.src, { since: gulp.lastRun(html) })
-    .pipe(gulpIf(process.env.NODE_ENV !== 'development', htmlMin({ // Only minify in production to speed up dev builds
+    .pipe(gulpIf(!isDevBuild, htmlMin({ // Only minify in production to speed up dev builds
       collapseWhitespace: true,
-      removeComments: true
+      removeComments: true,
     })))
-    .pipe(gulp.dest(paths.html.dest));
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(connect.reload());
 }
 
 export function styles() {
@@ -144,10 +166,7 @@ export function styles() {
       sassVariables(
         Object.assign(
           {
-            $env:
-              process.env.NODE_ENV === 'development'
-                ? 'development'
-                : 'production',
+            $env: getTargetEnv,
           },
           ...styleConfig,
         ),
@@ -158,10 +177,36 @@ export function styles() {
         includePaths: ['./node_modules', '../node_modules'],
       }).on('error', sass.logError),
     )
-    .pipe((gulpIf(process.env.NODE_ENV !== 'development', csso({ // Only minify in production to speed up dev builds
+    .pipe((gulpIf(!isDevBuild, csso({ // Only minify in production to speed up dev builds
       restructure: false, // Don't restructure CSS, otherwise it will break the styles
     }))))
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(connect.reload());
+}
+
+export function verticalStyle() {
+  return gulp
+    .src(paths.verticalStyle.src)
+    .pipe(
+      sassVariables(
+        Object.assign(
+          {
+            $env: getTargetEnv,
+          },
+          ...styleConfig,
+        ),
+      ),
+    )
+    .pipe(
+      sass({
+        includePaths: ['./node_modules', '../node_modules'],
+      }).on('error', sass.logError),
+    )
+    .pipe((gulpIf(!isDevBuild, csso({ // Only minify in production to speed up dev builds
+      restructure: false, // Don't restructure CSS, otherwise it will break the styles
+    }))))
+    .pipe(gulp.dest(paths.verticalStyle.dest))
+    .pipe(connect.reload());
 }
 
 export function scripts() {
@@ -172,13 +217,15 @@ export function scripts() {
         comments: false,
       }),
     )
-    .pipe(gulpIf(process.env.NODE_ENV !== 'development', uglify())) // Only uglify in production to speed up dev builds
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(gulpIf(!isDevBuild, uglify())) // Only uglify in production to speed up dev builds
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(connect.reload());
 }
 
 export function watch() {
   gulp.watch(paths.packages.watch, mvLernaPackages);
   gulp.watch(paths.styles.watch, styles);
+  gulp.watch(paths.verticalStyle.src, verticalStyle);
 
   gulp.watch([paths.src, `${paths.scripts.src}`, `${paths.styles.src}`], mvSrc);
 
@@ -186,11 +233,10 @@ export function watch() {
 }
 
 export function webserver() {
-  gulp.src([paths.dest]).pipe(
-    server({
-      livereload: true,
-    }),
-  );
+  connect.server({
+    root: paths.dest,
+    livereload: true,
+  });
 }
 
 export function recipes() {
@@ -204,8 +250,8 @@ export function recipeInfo() {
 
 const build = gulp.series(
   clean,
-  gulp.parallel(mvSrc, mvPackageJson, mvLernaPackages),
-  gulp.parallel(html, scripts, styles, recipes, recipeInfo),
+  gulp.parallel(mvSrc, mvPackageJson, mvLernaPackages, exportBuildInfo),
+  gulp.parallel(html, scripts, styles, verticalStyle, recipes, recipeInfo),
 );
 export { build };
 

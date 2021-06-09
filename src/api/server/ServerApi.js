@@ -2,7 +2,7 @@ import os from 'os';
 import path from 'path';
 import tar from 'tar';
 import fs from 'fs-extra';
-import { remote } from 'electron';
+import { app, require as remoteRequire } from '@electron/remote';
 
 import ServiceModel from '../../models/Service';
 import RecipePreviewModel from '../../models/RecipePreview';
@@ -35,8 +35,7 @@ module.paths.unshift(
   getRecipeDirectory(),
 );
 
-const { app } = remote;
-const { default: fetch } = remote.require('electron-fetch');
+const { default: fetch } = remoteRequire('electron-fetch');
 
 export default class ServerApi {
   recipePreviews = [];
@@ -458,7 +457,7 @@ export default class ServerApi {
 
   // News
   async getLatestNews() {
-    const url = `https://api.getferdi.com/v1/news?platform=${os.platform()}&arch=${os.arch()}&version=${app.getVersion()}`;
+    const url = `${apiBase(true)}/news?platform=${os.platform()}&arch=${os.arch()}&version=${app.getVersion()}`;
     const request = await sendAuthRequest(url);
     if (!request.ok) throw request;
     const data = await request.json();
@@ -468,7 +467,7 @@ export default class ServerApi {
   }
 
   async hideNews(id) {
-    const request = await sendAuthRequest(`https://api.getferdi.com/v1/news/${id}/read`);
+    const request = await sendAuthRequest(`${apiBase(true)}/news/${id}/read`);
     if (!request.ok) throw request;
     debug('ServerApi::hideNews resolves', id);
   }

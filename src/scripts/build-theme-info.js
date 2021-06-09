@@ -6,9 +6,11 @@
 const css = require('css');
 const fs = require('fs-extra');
 const path = require('path');
+const theme = require('@meetfranz/theme');
 
 // Colors that should be replaced with the accent color
 const accentColors = [
+  theme.DEFAULT_ACCENT_COLOR.toLowerCase(),
   '#7367f0',
   '#5e50ee',
 ];

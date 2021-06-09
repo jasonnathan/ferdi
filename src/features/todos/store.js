@@ -16,6 +16,8 @@ import {
 import { IPC } from './constants';
 import { state as delayAppState } from '../delayApp';
 
+import UserAgent from '../../models/UserAgent';
+
 const debug = require('debug')('Ferdi:feature:todos:store');
 
 export default class TodoStore extends FeatureStore {
@@ -23,7 +25,11 @@ export default class TodoStore extends FeatureStore {
 
   @observable isFeatureActive = false;
 
-  webview = null;
+  @observable webview = null;
+
+  @observable userAgentModel = new UserAgent();
+
+  isInitialized = false;
 
   @computed get width() {
     const width = this.settings.width || DEFAULT_TODOS_WIDTH;
@@ -49,6 +55,10 @@ export default class TodoStore extends FeatureStore {
     return localStorage.getItem('todos') || {};
   }
 
+  @computed get userAgent() {
+    return this.userAgentModel.userAgent;
+  }
+
   // ========== PUBLIC API ========= //
 
   @action start(stores, actions) {
@@ -65,6 +75,8 @@ export default class TodoStore extends FeatureStore {
       [todoActions.handleHostMessage, this._handleHostMessage],
       [todoActions.handleClientMessage, this._handleClientMessage],
       [todoActions.toggleTodosFeatureVisibility, this._toggleTodosFeatureVisibility],
+      [todoActions.openDevTools, this._openDevTools],
+      [todoActions.reload, this._reload],
     ]));
 
     // REACTIONS
@@ -119,7 +131,10 @@ export default class TodoStore extends FeatureStore {
 
   @action _setTodosWebview = ({ webview }) => {
     debug('_setTodosWebview', webview);
-    this.webview = webview;
+    if (this.webview !== webview) {
+      this.webview = webview;
+      this.userAgentModel.setWebviewReference(webview);
+    }
   };
 
   @action _handleHostMessage = (message) => {
@@ -129,15 +144,27 @@ export default class TodoStore extends FeatureStore {
     }
   };
 
-  @action _handleClientMessage = (message) => {
-    debug('_handleClientMessage', message);
+  @action _handleClientMessage = ({ channel, message = {} }) => {
+    debug('_handleClientMessage', channel, message);
     switch (message.action) {
       case 'todos:initialized': this._onTodosClientInitialized(); break;
       case 'todos:goToService': this._goToService(message.data); break;
       default:
-        debug('Unknown client message reiceived', message);
+        debug('Other message received', channel, message);
+        console.log('this.stores.services.isTodosServiceAdded', this.stores.services.isTodosServiceAdded);
+        if (this.stores.services.isTodosServiceAdded) {
+          this.actions.service.handleIPCMessage({
+            serviceId: this.stores.services.isTodosServiceAdded.id,
+            channel,
+            args: message,
+          });
+        }
     }
   };
+
+  _handleNewWindowEvent = ({ url }) => {
+    this.actions.app.openExternalUrl({ url });
+  }
 
   @action _toggleTodosFeatureVisibility = () => {
     debug('_toggleTodosFeatureVisibility');
@@ -147,14 +174,28 @@ export default class TodoStore extends FeatureStore {
     });
   };
 
+  _openDevTools = () => {
+    debug('_openDevTools');
+
+    const webview = document.querySelector('#todos-panel webview');
+    if (webview) webview.openDevTools();
+  }
+
+  _reload = () => {
+    debug('_reload');
+
+    const webview = document.querySelector('#todos-panel webview');
+    if (webview) webview.reload();
+  }
+
   // Todos client message handlers
 
-  _onTodosClientInitialized = () => {
+  _onTodosClientInitialized = async () => {
     const { authToken } = this.stores.user;
     const { isDarkThemeActive } = this.stores.ui;
     const { locale } = this.stores.app;
     if (!this.webview) return;
-    this.webview.send(IPC.TODOS_HOST_CHANNEL, {
+    await this.webview.send(IPC.TODOS_HOST_CHANNEL, {
       action: 'todos:configure',
       data: {
         authToken,
@@ -163,9 +204,11 @@ export default class TodoStore extends FeatureStore {
       },
     });
 
-    this.webview.addEventListener('new-window', ({ url }) => {
-      this.actions.app.openExternalUrl({ url });
-    });
+    if (!this.isInitialized) {
+      this.webview.addEventListener('new-window', this._handleNewWindowEvent);
+
+      this.isInitialized = true;
+    }
   };
 
   _goToService = ({ url, serviceId }) => {

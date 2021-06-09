@@ -1,9 +1,9 @@
 /* eslint-disable import/first */
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import { getCurrentWebContents } from '@electron/remote';
 import path from 'path';
 import { autorun, computed, observable } from 'mobx';
 import fs from 'fs-extra';
-import { loadModule } from 'cld3-asm';
 import { debounce } from 'lodash';
 import { FindInPage } from 'electron-find';
 
@@ -23,9 +23,11 @@ import customDarkModeCss from './darkmode/custom';
 import RecipeWebview from './lib/RecipeWebview';
 import Userscript from './lib/Userscript';
 
-import spellchecker, { switchDict, disable as disableSpellchecker, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
+import { switchDict, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
 import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
+import contextMenu from './contextMenu';
 import './notifications';
+import { screenShareCss } from './screenshare';
 
 import { DEFAULT_APP_SETTINGS } from '../config';
 import { isDevMode } from '../environment';
@@ -65,7 +67,8 @@ class RecipeController {
   }
 
   @computed get spellcheckerLanguage() {
-    return this.settings.service.spellcheckerLanguage || this.settings.app.spellcheckerLanguage;
+    const selected = this.settings.service.spellcheckerLanguage || this.settings.app.spellcheckerLanguage;
+    return selected;
   }
 
   cldIdentifier = null;
@@ -82,11 +85,20 @@ class RecipeController {
 
     debug('Send "hello" to host');
     setTimeout(() => ipcRenderer.sendToHost('hello'), 100);
-    await spellchecker();
+
+    this.spellcheckingProvider = null;
+    contextMenu(
+      () => this.settings.app.enableSpellchecking,
+      () => this.settings.app.spellcheckerLanguage,
+      () => this.spellcheckerLanguage,
+      () => this.settings.app.searchEngine,
+      () => this.settings.app.clipboardNotifications,
+    );
+
     autorun(() => this.update());
 
     document.addEventListener('DOMContentLoaded', () => {
-      this.findInPage = new FindInPage(remote.getCurrentWebContents(), {
+      this.findInPage = new FindInPage(getCurrentWebContents(), {
         inputFocusColor: '#CE9FFC',
         textColor: '#212121',
       });
@@ -117,14 +129,15 @@ class RecipeController {
   }
 
   async loadUserFiles(recipe, config) {
+    const styles = document.createElement('style');
+    styles.innerHTML = screenShareCss;
+
     const userCss = path.join(recipe.path, 'user.css');
     if (await fs.exists(userCss)) {
       const data = await fs.readFile(userCss);
-      const styles = document.createElement('style');
-      styles.innerHTML = data.toString();
-
-      document.querySelector('head').appendChild(styles);
+      styles.innerHTML += data.toString();
     }
+    document.querySelector('head').appendChild(styles);
 
     const userJs = path.join(recipe.path, 'user.js');
     if (await fs.exists(userJs)) {
@@ -158,6 +171,7 @@ class RecipeController {
     debug('System spellcheckerLanguage', this.settings.app.spellcheckerLanguage);
     debug('Service spellcheckerLanguage', this.settings.service.spellcheckerLanguage);
     debug('darkReaderSettigs', this.settings.service.darkReaderSettings);
+    debug('searchEngine', this.settings.app.searchEngine);
 
     if (this.userscript && this.userscript.internal_setSettings) {
       this.userscript.internal_setSettings(this.settings);
@@ -166,21 +180,14 @@ class RecipeController {
     if (this.settings.app.enableSpellchecking) {
       debug('Setting spellchecker language to', this.spellcheckerLanguage);
       let { spellcheckerLanguage } = this;
-      if (spellcheckerLanguage === 'automatic') {
+      if (spellcheckerLanguage.includes('automatic')) {
         this.automaticLanguageDetection();
         debug('Found `automatic` locale, falling back to user locale until detected', this.settings.app.locale);
         spellcheckerLanguage = this.settings.app.locale;
-      } else if (this.cldIdentifier) {
-        this.cldIdentifier.destroy();
       }
       switchDict(spellcheckerLanguage);
     } else {
       debug('Disable spellchecker');
-      disableSpellchecker();
-
-      if (this.cldIdentifier) {
-        this.cldIdentifier.destroy();
-      }
     }
 
     if (!this.recipe) {
@@ -291,10 +298,7 @@ class RecipeController {
   }
 
   async automaticLanguageDetection() {
-    const cldFactory = await loadModule();
-    this.cldIdentifier = cldFactory.create(0, 1000);
-
-    window.addEventListener('keyup', debounce((e) => {
+    window.addEventListener('keyup', debounce(async (e) => {
       const element = e.target;
 
       if (!element) return;
@@ -307,19 +311,15 @@ class RecipeController {
       }
 
       // Force a minimum length to get better detection results
-      if (value.length < 30) return;
+      if (value.length < 25) return;
 
       debug('Detecting language for', value);
-      const findResult = this.cldIdentifier.findLanguage(value);
+      const locale = await ipcRenderer.invoke('detect-language', { sample: value });
 
-      debug('Language detection result', findResult);
-
-      if (findResult.is_reliable) {
-        const spellcheckerLocale = getSpellcheckerLocaleByFuzzyIdentifier(findResult.language);
-        debug('Language detected reliably, setting spellchecker language to', spellcheckerLocale);
-        if (spellcheckerLocale) {
-          switchDict(spellcheckerLocale);
-        }
+      const spellcheckerLocale = getSpellcheckerLocaleByFuzzyIdentifier(locale);
+      debug('Language detected reliably, setting spellchecker language to', spellcheckerLocale);
+      if (spellcheckerLocale) {
+        switchDict(spellcheckerLocale);
       }
     }, 225));
   }
@@ -333,7 +333,8 @@ new RecipeController();
 const originalWindowOpen = window.open;
 
 window.open = (url, frameName, features) => {
-  if (!url && !frameName && !features) {
+  debug('window.open', url, frameName, features);
+  if (!url) {
     // The service hasn't yet supplied a URL (as used in Skype).
     // Return a new dummy window object and wait for the service to change the properties
     const newWindow = {
@@ -345,8 +346,12 @@ window.open = (url, frameName, features) => {
     const checkInterval = setInterval(() => {
       // Has the service changed the URL yet?
       if (newWindow.location.href !== '') {
-        // Open the new URL
-        ipcRenderer.sendToHost('new-window', newWindow.location.href);
+        if (features) {
+          originalWindowOpen(newWindow.location.href, frameName, features);
+        } else {
+          // Open the new URL
+          ipcRenderer.sendToHost('new-window', newWindow.location.href);
+        }
         clearInterval(checkInterval);
       }
     }, 0);

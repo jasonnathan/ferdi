@@ -49,78 +49,78 @@
         "defaultMessage": "!!!Change server",
         "end": {
           "column": 3,
-          "line": 16
+          "line": 17
         },
         "file": "src/components/auth/ChangeServer.js",
         "id": "changeserver.headline",
         "start": {
           "column": 12,
-          "line": 13
+          "line": 14
         }
       },
       {
         "defaultMessage": "!!!Server",
         "end": {
           "column": 3,
-          "line": 20
+          "line": 21
         },
         "file": "src/components/auth/ChangeServer.js",
         "id": "changeserver.label",
         "start": {
           "column": 9,
-          "line": 17
+          "line": 18
         }
       },
       {
         "defaultMessage": "!!!Extra settings offered by Ferdi will not be saved",
         "end": {
           "column": 3,
-          "line": 24
+          "line": 25
         },
         "file": "src/components/auth/ChangeServer.js",
         "id": "changeserver.warning",
         "start": {
           "column": 11,
-          "line": 21
+          "line": 22
         }
       },
       {
         "defaultMessage": "!!!Custom server",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 29
         },
         "file": "src/components/auth/ChangeServer.js",
         "id": "changeserver.customServerLabel",
         "start": {
           "column": 21,
-          "line": 25
+          "line": 26
         }
       },
       {
         "defaultMessage": "!!!Enter a valid URL",
         "end": {
           "column": 3,
-          "line": 32
+          "line": 33
         },
         "file": "src/components/auth/ChangeServer.js",
         "id": "changeserver.urlError",
         "start": {
           "column": 12,
-          "line": 29
+          "line": 30
         }
       },
       {
         "defaultMessage": "!!!Submit",
         "end": {
           "column": 3,
-          "line": 36
+          "line": 37
         },
         "file": "src/components/auth/ChangeServer.js",
         "id": "changeserver.submit",
         "start": {
           "column": 10,
-          "line": 33
+          "line": 34
         }
       }
     ],
@@ -285,104 +285,104 @@
         "defaultMessage": "!!!Locked",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 19
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.headline",
         "start": {
           "column": 12,
-          "line": 19
+          "line": 16
         }
       },
       {
         "defaultMessage": "!!!Ferdi is currently locked. Please unlock Ferdi with your password to see your messages.",
         "end": {
           "column": 3,
-          "line": 26
+          "line": 23
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.info",
         "start": {
           "column": 8,
-          "line": 23
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Unlock with Touch ID",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 27
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.touchId",
         "start": {
           "column": 11,
-          "line": 27
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!unlock via Touch ID",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 31
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.touchIdPrompt",
         "start": {
           "column": 17,
-          "line": 31
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 35
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.password.label",
         "start": {
           "column": 17,
-          "line": 35
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Unlock",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 39
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.submit.label",
         "start": {
           "column": 21,
-          "line": 39
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Unlock with Password",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 43
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.unlockWithPassword",
         "start": {
           "column": 22,
-          "line": 43
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Password invalid",
         "end": {
           "column": 3,
-          "line": 50
+          "line": 47
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.invalidCredentials",
         "start": {
           "column": 22,
-          "line": 47
+          "line": 44
         }
       }
     ],
@@ -394,169 +394,169 @@
         "defaultMessage": "!!!Sign in",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 23
         },
         "file": "src/components/auth/Login.js",
         "id": "login.headline",
         "start": {
           "column": 12,
-          "line": 19
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Email address",
         "end": {
           "column": 3,
-          "line": 26
+          "line": 27
         },
         "file": "src/components/auth/Login.js",
         "id": "login.email.label",
         "start": {
           "column": 14,
-          "line": 23
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 31
         },
         "file": "src/components/auth/Login.js",
         "id": "login.password.label",
         "start": {
           "column": 17,
-          "line": 27
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Sign in",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 35
         },
         "file": "src/components/auth/Login.js",
         "id": "login.submit.label",
         "start": {
           "column": 21,
-          "line": 31
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Email or password not valid",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 39
         },
         "file": "src/components/auth/Login.js",
         "id": "login.invalidCredentials",
         "start": {
           "column": 22,
-          "line": 35
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Using a Franz account to log in?",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 43
         },
         "file": "src/components/auth/Login.js",
         "id": "login.customServerQuestion",
         "start": {
           "column": 24,
-          "line": 39
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Try importing your Franz account into Ferdi",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 47
         },
         "file": "src/components/auth/Login.js",
         "id": "login.customServerSuggestion",
         "start": {
           "column": 26,
-          "line": 43
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Your session expired, please login again.",
         "end": {
           "column": 3,
-          "line": 50
+          "line": 51
         },
         "file": "src/components/auth/Login.js",
         "id": "login.tokenExpired",
         "start": {
           "column": 16,
-          "line": 47
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Your session expired, please login again.",
         "end": {
           "column": 3,
-          "line": 54
+          "line": 55
         },
         "file": "src/components/auth/Login.js",
         "id": "login.serverLogout",
         "start": {
           "column": 16,
-          "line": 51
+          "line": 52
         }
       },
       {
         "defaultMessage": "!!!Create a free account",
         "end": {
           "column": 3,
-          "line": 58
+          "line": 59
         },
         "file": "src/components/auth/Login.js",
         "id": "login.link.signup",
         "start": {
           "column": 14,
-          "line": 55
+          "line": 56
         }
       },
       {
         "defaultMessage": "!!!Change server",
         "end": {
           "column": 3,
-          "line": 62
+          "line": 63
         },
         "file": "src/components/auth/Login.js",
         "id": "login.changeServer",
         "start": {
           "column": 16,
-          "line": 59
+          "line": 60
         }
       },
       {
         "defaultMessage": "!!!Use Ferdi without an Account",
         "end": {
           "column": 3,
-          "line": 66
+          "line": 67
         },
         "file": "src/components/auth/Login.js",
         "id": "services.serverless",
         "start": {
           "column": 14,
-          "line": 63
+          "line": 64
         }
       },
       {
         "defaultMessage": "!!!Forgot password",
         "end": {
           "column": 3,
-          "line": 70
+          "line": 71
         },
         "file": "src/components/auth/Login.js",
         "id": "login.link.password",
         "start": {
           "column": 16,
-          "line": 67
+          "line": 68
         }
       }
     ],
@@ -835,6 +835,159 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "!!!Invite Friends",
+        "end": {
+          "column": 3,
+          "line": 19
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "settings.invite.headline",
+        "start": {
+          "column": 20,
+          "line": 16
+        }
+      },
+      {
+        "defaultMessage": "!!!Invite 3 of your friends or colleagues",
+        "end": {
+          "column": 3,
+          "line": 23
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "invite.headline.friends",
+        "start": {
+          "column": 12,
+          "line": 20
+        }
+      },
+      {
+        "defaultMessage": "!!!Name",
+        "end": {
+          "column": 3,
+          "line": 27
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "invite.name.label",
+        "start": {
+          "column": 13,
+          "line": 24
+        }
+      },
+      {
+        "defaultMessage": "!!!Email address",
+        "end": {
+          "column": 3,
+          "line": 31
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "invite.email.label",
+        "start": {
+          "column": 14,
+          "line": 28
+        }
+      },
+      {
+        "defaultMessage": "!!!Send invites",
+        "end": {
+          "column": 3,
+          "line": 35
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "invite.submit.label",
+        "start": {
+          "column": 21,
+          "line": 32
+        }
+      },
+      {
+        "defaultMessage": "!!!I want to do this later",
+        "end": {
+          "column": 3,
+          "line": 39
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "invite.skip.label",
+        "start": {
+          "column": 19,
+          "line": 36
+        }
+      },
+      {
+        "defaultMessage": "!!!Invitations sent successfully",
+        "end": {
+          "column": 3,
+          "line": 43
+        },
+        "file": "src/components/auth/ServiceAssistant.js",
+        "id": "invite.successInfo",
+        "start": {
+          "column": 21,
+          "line": 40
+        }
+      }
+    ],
+    "path": "src/components/auth/ServiceAssistant.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Let's get started",
+        "end": {
+          "column": 3,
+          "line": 22
+        },
+        "file": "src/components/auth/SetupAssistant.js",
+        "id": "setupAssistant.headline",
+        "start": {
+          "column": 12,
+          "line": 19
+        }
+      },
+      {
+        "defaultMessage": "!!!Choose from our most used services and get back on top of your messaging now.",
+        "end": {
+          "column": 3,
+          "line": 26
+        },
+        "file": "src/components/auth/SetupAssistant.js",
+        "id": "setupAssistant.subheadline",
+        "start": {
+          "column": 15,
+          "line": 23
+        }
+      },
+      {
+        "defaultMessage": "!!!Let's go",
+        "end": {
+          "column": 3,
+          "line": 30
+        },
+        "file": "src/components/auth/SetupAssistant.js",
+        "id": "setupAssistant.submit.label",
+        "start": {
+          "column": 21,
+          "line": 27
+        }
+      },
+      {
+        "defaultMessage": "!!!Invitations sent successfully",
+        "end": {
+          "column": 3,
+          "line": 34
+        },
+        "file": "src/components/auth/SetupAssistant.js",
+        "id": "invite.successInfo",
+        "start": {
+          "column": 21,
+          "line": 31
+        }
+      }
+    ],
+    "path": "src/components/auth/SetupAssistant.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "!!!Sign up",
         "end": {
           "column": 3,
@@ -1056,52 +1209,52 @@
         "defaultMessage": "!!!Your services have been updated.",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 35
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.servicesUpdated",
         "start": {
           "column": 19,
-          "line": 31
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Reload services",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 39
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.buttonReloadServices",
         "start": {
           "column": 24,
-          "line": 35
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Could not load services and user information",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 43
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.requiredRequestsFailed",
         "start": {
           "column": 26,
-          "line": 39
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!There were errors while trying to perform an authenticated request. Please try logging out and back in if this error persists.",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 47
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.authRequestFailed",
         "start": {
           "column": 21,
-          "line": 43
+          "line": 44
         }
       }
     ],
@@ -1372,7 +1525,7 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "!!!Oh no! Franz lost the connection to {name}.",
+        "defaultMessage": "!!!Oh no! Ferdi lost the connection to {name}.",
         "end": {
           "column": 3,
           "line": 18
@@ -1590,65 +1743,65 @@
         "defaultMessage": "!!!Welcome to Ferdi",
         "end": {
           "column": 3,
-          "line": 18
+          "line": 19
         },
         "file": "src/components/services/content/Services.js",
         "id": "services.welcome",
         "start": {
           "column": 11,
-          "line": 15
+          "line": 16
         }
       },
       {
         "defaultMessage": "!!!Get started",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 23
         },
         "file": "src/components/services/content/Services.js",
         "id": "services.getStarted",
         "start": {
           "column": 14,
-          "line": 19
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Please login to use Ferdi.",
         "end": {
           "column": 3,
-          "line": 26
+          "line": 27
         },
         "file": "src/components/services/content/Services.js",
         "id": "services.login",
         "start": {
           "column": 9,
-          "line": 23
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Use Ferdi without an Account",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 31
         },
         "file": "src/components/services/content/Services.js",
         "id": "services.serverless",
         "start": {
           "column": 14,
-          "line": 27
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Optionally, you can change your Ferdi server by clicking the cog in the bottom left corner.",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 35
         },
         "file": "src/components/services/content/Services.js",
         "id": "services.serverInfo",
         "start": {
           "column": 14,
-          "line": 31
+          "line": 32
         }
       }
     ],
@@ -1787,117 +1940,130 @@
         "defaultMessage": "!!!Reload",
         "end": {
           "column": 3,
-          "line": 18
+          "line": 23
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.reload",
         "start": {
           "column": 10,
-          "line": 15
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Edit",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 27
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.edit",
         "start": {
           "column": 8,
-          "line": 19
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Disable notifications",
         "end": {
           "column": 3,
-          "line": 26
+          "line": 31
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.disableNotifications",
         "start": {
           "column": 24,
-          "line": 23
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Enable notifications",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 35
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.enableNotification",
         "start": {
           "column": 23,
-          "line": 27
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Disable audio",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 39
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.disableAudio",
         "start": {
           "column": 16,
-          "line": 31
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Enable audio",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 43
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.enableAudio",
         "start": {
           "column": 15,
-          "line": 35
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Disable Service",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 47
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.disableService",
         "start": {
           "column": 18,
-          "line": 39
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Enable Service",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 51
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.enableService",
         "start": {
           "column": 17,
-          "line": 43
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Delete Service",
         "end": {
           "column": 3,
-          "line": 50
+          "line": 55
         },
         "file": "src/components/services/tabs/TabItem.js",
         "id": "tabs.item.deleteService",
         "start": {
           "column": 17,
-          "line": 47
+          "line": 52
+        }
+      },
+      {
+        "defaultMessage": "!!!Do you really want to delete the {serviceName} service?",
+        "end": {
+          "column": 3,
+          "line": 59
+        },
+        "file": "src/components/services/tabs/TabItem.js",
+        "id": "tabs.item.confirmDeleteService",
+        "start": {
+          "column": 24,
+          "line": 56
         }
       }
     ],
@@ -2262,7 +2428,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Support Ferdi",
+        "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
           "line": 44
@@ -2296,182 +2462,182 @@
         "defaultMessage": "!!!Available Services",
         "end": {
           "column": 3,
-          "line": 23
+          "line": 24
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.headline",
         "start": {
           "column": 12,
-          "line": 20
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!Search service",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 28
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.searchService",
         "start": {
           "column": 17,
-          "line": 24
+          "line": 25
         }
       },
       {
         "defaultMessage": "!!!Most popular",
         "end": {
           "column": 3,
-          "line": 31
+          "line": 32
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.mostPopular",
         "start": {
           "column": 22,
-          "line": 28
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!All services",
         "end": {
           "column": 3,
-          "line": 35
+          "line": 36
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.all",
         "start": {
           "column": 14,
-          "line": 32
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!Custom Services",
         "end": {
           "column": 3,
-          "line": 39
+          "line": 40
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.custom",
         "start": {
           "column": 17,
-          "line": 36
+          "line": 37
         }
       },
       {
-        "defaultMessage": "!!!Sorry, but no service matched your search term.",
+        "defaultMessage": "!!!Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
         "end": {
           "column": 3,
-          "line": 43
+          "line": 44
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.nothingFound",
         "start": {
           "column": 16,
-          "line": 40
+          "line": 41
         }
       },
       {
         "defaultMessage": "!!!Service successfully added",
         "end": {
           "column": 3,
-          "line": 47
+          "line": 48
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.servicesSuccessfulAddedInfo",
         "start": {
           "column": 31,
-          "line": 44
+          "line": 45
         }
       },
       {
         "defaultMessage": "!!!Missing a service?",
         "end": {
           "column": 3,
-          "line": 51
+          "line": 52
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.missingService",
         "start": {
           "column": 18,
-          "line": 48
+          "line": 49
         }
       },
       {
         "defaultMessage": "!!!To add a custom service, copy the recipe folder into:",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 56
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.intro",
         "start": {
           "column": 21,
-          "line": 52
+          "line": 53
         }
       },
       {
         "defaultMessage": "!!!Open directory",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 60
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.openFolder",
         "start": {
           "column": 14,
-          "line": 56
+          "line": 57
         }
       },
       {
         "defaultMessage": "!!!Developer Documentation",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 64
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.openDevDocs",
         "start": {
           "column": 15,
-          "line": 60
+          "line": 61
         }
       },
       {
         "defaultMessage": "!!!Custom 3rd Party Recipes",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 68
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.customRecipes",
         "start": {
           "column": 25,
-          "line": 64
+          "line": 65
         }
       },
       {
         "defaultMessage": "!!!Community 3rd Party Recipes",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 72
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.communityRecipes",
         "start": {
           "column": 28,
-          "line": 68
+          "line": 69
         }
       },
       {
         "defaultMessage": "!!!Your Development Service Recipes",
         "end": {
           "column": 3,
-          "line": 75
+          "line": 76
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.devRecipes",
         "start": {
           "column": 22,
-          "line": 72
+          "line": 73
         }
       }
     ],
@@ -2483,364 +2649,364 @@
         "defaultMessage": "!!!Save service",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 29
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.saveButton",
         "start": {
           "column": 15,
-          "line": 25
+          "line": 26
         }
       },
       {
         "defaultMessage": "!!!Delete Service",
         "end": {
           "column": 3,
-          "line": 32
+          "line": 33
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.deleteButton",
         "start": {
           "column": 17,
-          "line": 29
+          "line": 30
         }
       },
       {
         "defaultMessage": "!!!Open darkmode.css",
         "end": {
           "column": 3,
-          "line": 36
+          "line": 37
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.openDarkmodeCss",
         "start": {
           "column": 19,
-          "line": 33
+          "line": 34
         }
       },
       {
         "defaultMessage": "!!!Open user.css",
         "end": {
           "column": 3,
-          "line": 40
+          "line": 41
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.openUserCss",
         "start": {
           "column": 15,
-          "line": 37
+          "line": 38
         }
       },
       {
         "defaultMessage": "!!!Open user.js",
         "end": {
           "column": 3,
-          "line": 44
+          "line": 45
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.openUserJs",
         "start": {
           "column": 14,
-          "line": 41
+          "line": 42
         }
       },
       {
         "defaultMessage": "!!!Your user files will be inserted into the webpage so you can customize services in any way you like. User files are only stored locally and are not transferred to other computers using the same account.",
         "end": {
           "column": 3,
-          "line": 48
+          "line": 49
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.recipeFileInfo",
         "start": {
           "column": 18,
-          "line": 45
+          "line": 46
         }
       },
       {
         "defaultMessage": "!!!Available services",
         "end": {
           "column": 3,
-          "line": 52
+          "line": 53
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.availableServices",
         "start": {
           "column": 21,
-          "line": 49
+          "line": 50
         }
       },
       {
         "defaultMessage": "!!!Your services",
         "end": {
           "column": 3,
-          "line": 56
+          "line": 57
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.yourServices",
         "start": {
           "column": 16,
-          "line": 53
+          "line": 54
         }
       },
       {
         "defaultMessage": "!!!Add {name}",
         "end": {
           "column": 3,
-          "line": 60
+          "line": 61
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.addServiceHeadline",
         "start": {
           "column": 22,
-          "line": 57
+          "line": 58
         }
       },
       {
         "defaultMessage": "!!!Edit {name}",
         "end": {
           "column": 3,
-          "line": 64
+          "line": 65
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.editServiceHeadline",
         "start": {
           "column": 23,
-          "line": 61
+          "line": 62
         }
       },
       {
         "defaultMessage": "!!!Hosted",
         "end": {
           "column": 3,
-          "line": 68
+          "line": 69
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.tabHosted",
         "start": {
           "column": 13,
-          "line": 65
+          "line": 66
         }
       },
       {
         "defaultMessage": "!!!Self hosted ⭐️",
         "end": {
           "column": 3,
-          "line": 72
+          "line": 73
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.tabOnPremise",
         "start": {
           "column": 16,
-          "line": 69
+          "line": 70
         }
       },
       {
         "defaultMessage": "!!!Use the hosted {name} service.",
         "end": {
           "column": 3,
-          "line": 76
+          "line": 77
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.useHostedService",
         "start": {
           "column": 20,
-          "line": 73
+          "line": 74
         }
       },
       {
         "defaultMessage": "!!!Could not validate custom {name} server.",
         "end": {
           "column": 3,
-          "line": 80
+          "line": 81
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.customUrlValidationError",
         "start": {
           "column": 28,
-          "line": 77
+          "line": 78
         }
       },
       {
         "defaultMessage": "!!!To add self hosted services, you need a Ferdi Premium Supporter Account.",
         "end": {
           "column": 3,
-          "line": 84
+          "line": 85
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.customUrlPremiumInfo",
         "start": {
           "column": 24,
-          "line": 81
+          "line": 82
         }
       },
       {
         "defaultMessage": "!!!Upgrade your account",
         "end": {
           "column": 3,
-          "line": 88
+          "line": 89
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.customUrlUpgradeAccount",
         "start": {
           "column": 27,
-          "line": 85
+          "line": 86
         }
       },
       {
         "defaultMessage": "!!!You will be notified about all new messages in a channel, not just @username, @channel, @here, ...",
         "end": {
           "column": 3,
-          "line": 92
+          "line": 93
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.indirectMessageInfo",
         "start": {
           "column": 23,
-          "line": 89
+          "line": 90
         }
       },
       {
         "defaultMessage": "!!!When disabled, all notification sounds and audio playback are muted",
         "end": {
           "column": 3,
-          "line": 96
+          "line": 97
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.isMutedInfo",
         "start": {
           "column": 15,
-          "line": 93
+          "line": 94
         }
       },
       {
-        "defaultMessage": "!!!You currently have hibernation enabled but you can disable hibernation for individual services using this option.",
+        "defaultMessage": "!!!When enabled, a service will be shut down after a period of time to save system resources.",
         "end": {
           "column": 3,
-          "line": 100
+          "line": 101
         },
         "file": "src/components/settings/services/EditServiceForm.js",
-        "id": "settings.service.form.disableHibernationInfo",
+        "id": "settings.service.form.isHibernatedEnabledInfo",
         "start": {
-          "column": 26,
-          "line": 97
+          "column": 28,
+          "line": 98
         }
       },
       {
         "defaultMessage": "!!!Notifications",
         "end": {
           "column": 3,
-          "line": 104
+          "line": 105
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineNotifications",
         "start": {
           "column": 25,
-          "line": 101
+          "line": 102
         }
       },
       {
         "defaultMessage": "!!!Unread message badges",
         "end": {
           "column": 3,
-          "line": 108
+          "line": 109
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineBadges",
         "start": {
           "column": 18,
-          "line": 105
+          "line": 106
         }
       },
       {
         "defaultMessage": "!!!General",
         "end": {
           "column": 3,
-          "line": 112
+          "line": 113
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineGeneral",
         "start": {
           "column": 19,
-          "line": 109
+          "line": 110
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Settings",
         "end": {
           "column": 3,
-          "line": 116
+          "line": 117
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineDarkReaderSettings",
         "start": {
           "column": 30,
-          "line": 113
+          "line": 114
         }
       },
       {
         "defaultMessage": "!!!Delete",
         "end": {
           "column": 3,
-          "line": 120
+          "line": 121
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.iconDelete",
         "start": {
           "column": 14,
-          "line": 117
+          "line": 118
         }
       },
       {
         "defaultMessage": "!!!Drop your image, or click here",
         "end": {
           "column": 3,
-          "line": 124
+          "line": 125
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.iconUpload",
         "start": {
           "column": 14,
-          "line": 121
+          "line": 122
         }
       },
       {
         "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
         "end": {
           "column": 3,
-          "line": 128
+          "line": 129
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.headline",
         "start": {
           "column": 17,
-          "line": 125
+          "line": 126
         }
       },
       {
         "defaultMessage": "!!!Please restart Ferdi after changing proxy Settings.",
         "end": {
           "column": 3,
-          "line": 132
+          "line": 133
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.restartInfo",
         "start": {
           "column": 20,
-          "line": 129
+          "line": 130
         }
       },
       {
         "defaultMessage": "!!!Proxy settings will not be synchronized with the Ferdi servers.",
         "end": {
           "column": 3,
-          "line": 136
+          "line": 137
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.info",
         "start": {
           "column": 13,
-          "line": 133
+          "line": 134
         }
       }
     ],
@@ -2953,117 +3119,117 @@
         "defaultMessage": "!!!Your services",
         "end": {
           "column": 3,
-          "line": 18
+          "line": 19
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.services.headline",
         "start": {
           "column": 12,
-          "line": 15
+          "line": 16
         }
       },
       {
         "defaultMessage": "!!!Search service",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 23
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.searchService",
         "start": {
           "column": 17,
-          "line": 19
+          "line": 20
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any services yet.",
+        "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
-          "line": 26
+          "line": 27
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.services.noServicesAdded",
         "start": {
           "column": 19,
-          "line": 23
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Sorry, but no service matched your search term.",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 31
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.recipes.nothingFound",
         "start": {
           "column": 18,
-          "line": 27
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Discover services",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 35
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.services.discoverServices",
         "start": {
           "column": 20,
-          "line": 31
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Could not load your services",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 39
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.services.servicesRequestFailed",
         "start": {
           "column": 25,
-          "line": 35
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Try again",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 43
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.account.tryReloadServices",
         "start": {
           "column": 21,
-          "line": 39
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Your changes have been saved",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 47
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.services.updatedInfo",
         "start": {
           "column": 15,
-          "line": 43
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Service has been deleted",
         "end": {
           "column": 3,
-          "line": 50
+          "line": 51
         },
         "file": "src/components/settings/services/ServicesDashboard.js",
         "id": "settings.services.deletedInfo",
         "start": {
           "column": 15,
-          "line": 47
+          "line": 48
         }
       }
     ],
@@ -3075,390 +3241,416 @@
         "defaultMessage": "!!!Settings",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 27
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headline",
         "start": {
           "column": 12,
-          "line": 22
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!General",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 31
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineGeneral",
         "start": {
           "column": 19,
-          "line": 26
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Sending telemetry data allows us to find errors in Ferdi - we will not send any personal information like your message data! Changing this option requires you to restart Ferdi.",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 35
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.sentryInfo",
         "start": {
           "column": 14,
-          "line": 30
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!By default, Ferdi will keep all your services open and loaded in the background so they are ready when you want to use them. Service Hibernation will unload your services after a specified amount. This is useful to save RAM or keeping services from slowing down your computer.",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 39
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.hibernateInfo",
         "start": {
           "column": 17,
-          "line": 34
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Minutes of inactivity, after which Ferdi should automatically lock. Use 0 to disable",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 43
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.inactivityLockInfo",
         "start": {
           "column": 22,
-          "line": 38
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!This server will be used for the \"Franz Todo\" feature. (default: https://app.franztodos.com)",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 47
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.todoServerInfo",
         "start": {
           "column": 18,
-          "line": 42
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 51
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockedPassword",
         "start": {
           "column": 18,
-          "line": 46
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Please make sure to set a password you'll remember.\nIf you loose this password, you will have to reinstall Ferdi.",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 55
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockedPasswordInfo",
         "start": {
           "column": 22,
-          "line": 50
+          "line": 52
         }
       },
       {
         "defaultMessage": "!!!Password Lock allows you to keep your messages protected.\nUsing Password Lock, you will be prompted to enter your password everytime you start Ferdi or lock Ferdi yourself using the lock symbol in the bottom left corner or the shortcut CMD/CTRL+Shift+L.",
         "end": {
           "column": 3,
-          "line": 57
+          "line": 59
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockInfo",
         "start": {
           "column": 12,
-          "line": 54
+          "line": 56
         }
       },
       {
         "defaultMessage": "!!!Times in 24-Hour-Format. End time can be before start time (e.g. start 17:00, end 09:00) to enable Do-not-Disturb overnight.",
         "end": {
           "column": 3,
-          "line": 61
+          "line": 63
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.scheduledDNDTimeInfo",
         "start": {
           "column": 24,
-          "line": 58
+          "line": 60
         }
       },
       {
         "defaultMessage": "!!!Scheduled Do-not-Disturb allows you to define a period of time in which you do not want to get Notifications from Ferdi.",
         "end": {
           "column": 3,
-          "line": 65
+          "line": 67
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.scheduledDNDInfo",
         "start": {
           "column": 20,
-          "line": 62
+          "line": 64
         }
       },
       {
         "defaultMessage": "!!!Language",
         "end": {
           "column": 3,
-          "line": 69
+          "line": 71
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineLanguage",
         "start": {
           "column": 20,
-          "line": 66
+          "line": 68
         }
       },
       {
         "defaultMessage": "!!!Updates",
         "end": {
           "column": 3,
-          "line": 73
+          "line": 75
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineUpdates",
         "start": {
           "column": 19,
-          "line": 70
+          "line": 72
         }
       },
       {
         "defaultMessage": "!!!Appearance",
         "end": {
           "column": 3,
-          "line": 77
+          "line": 79
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAppearance",
         "start": {
           "column": 22,
-          "line": 74
+          "line": 76
         }
       },
       {
         "defaultMessage": "!!!Universal Dark Mode tries to dynamically generate dark mode styles for services that are otherwise not currently supported.",
         "end": {
           "column": 3,
-          "line": 81
+          "line": 83
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.universalDarkModeInfo",
         "start": {
           "column": 25,
-          "line": 78
+          "line": 80
         }
       },
       {
-        "defaultMessage": "!!!Write your accent color in a CSS-compatible format. (Default: #7367f0)",
+        "defaultMessage": "!!!Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
         "end": {
           "column": 3,
-          "line": 85
+          "line": 87
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.accentColorInfo",
         "start": {
           "column": 19,
-          "line": 82
+          "line": 84
+        }
+      },
+      {
+        "defaultMessage": "!!!Privacy",
+        "end": {
+          "column": 3,
+          "line": 91
+        },
+        "file": "src/components/settings/settings/EditSettingsForm.js",
+        "id": "settings.app.headlinePrivacy",
+        "start": {
+          "column": 19,
+          "line": 88
         }
       },
       {
         "defaultMessage": "!!!Advanced",
         "end": {
           "column": 3,
-          "line": 89
+          "line": 95
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAdvanced",
         "start": {
           "column": 20,
-          "line": 86
+          "line": 92
         }
       },
       {
         "defaultMessage": "!!!Help us to translate Ferdi into your language.",
         "end": {
           "column": 3,
-          "line": 93
+          "line": 99
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.translationHelp",
         "start": {
           "column": 19,
-          "line": 90
+          "line": 96
+        }
+      },
+      {
+        "defaultMessage": "!!!Ferdi uses your Mac's build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac's System Preferences.",
+        "end": {
+          "column": 3,
+          "line": 103
+        },
+        "file": "src/components/settings/settings/EditSettingsForm.js",
+        "id": "settings.app.spellCheckerLanguageInfo",
+        "start": {
+          "column": 28,
+          "line": 100
         }
       },
       {
         "defaultMessage": "!!!Cache",
         "end": {
           "column": 3,
-          "line": 97
+          "line": 107
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.subheadlineCache",
         "start": {
           "column": 20,
-          "line": 94
+          "line": 104
         }
       },
       {
         "defaultMessage": "!!!Ferdi cache is currently using {size} of disk space.",
         "end": {
           "column": 3,
-          "line": 101
+          "line": 111
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheInfo",
         "start": {
           "column": 13,
-          "line": 98
+          "line": 108
         }
       },
       {
         "defaultMessage": "!!!Couldn't clear all cache",
         "end": {
           "column": 3,
-          "line": 105
+          "line": 115
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheNotCleared",
         "start": {
           "column": 19,
-          "line": 102
+          "line": 112
         }
       },
       {
         "defaultMessage": "!!!Clear cache",
         "end": {
           "column": 3,
-          "line": 109
+          "line": 119
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonClearAllCache",
         "start": {
           "column": 23,
-          "line": 106
+          "line": 116
         }
       },
       {
         "defaultMessage": "!!!Check for updates",
         "end": {
           "column": 3,
-          "line": 113
+          "line": 123
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonSearchForUpdate",
         "start": {
           "column": 25,
-          "line": 110
+          "line": 120
         }
       },
       {
         "defaultMessage": "!!!Restart & install update",
         "end": {
           "column": 3,
-          "line": 117
+          "line": 127
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonInstallUpdate",
         "start": {
           "column": 23,
-          "line": 114
+          "line": 124
         }
       },
       {
         "defaultMessage": "!!!Is searching for update",
         "end": {
           "column": 3,
-          "line": 121
+          "line": 131
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusSearching",
         "start": {
           "column": 25,
-          "line": 118
+          "line": 128
         }
       },
       {
         "defaultMessage": "!!!Update available, downloading...",
         "end": {
           "column": 3,
-          "line": 125
+          "line": 135
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusAvailable",
         "start": {
           "column": 25,
-          "line": 122
+          "line": 132
         }
       },
       {
         "defaultMessage": "!!!You are using the latest version of Ferdi",
         "end": {
           "column": 3,
-          "line": 129
+          "line": 139
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusUpToDate",
         "start": {
           "column": 24,
-          "line": 126
+          "line": 136
         }
       },
       {
         "defaultMessage": "!!!Current version:",
         "end": {
           "column": 3,
-          "line": 133
+          "line": 143
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.currentVersion",
         "start": {
           "column": 18,
-          "line": 130
+          "line": 140
         }
       },
       {
         "defaultMessage": "!!!Changes require restart",
         "end": {
           "column": 3,
-          "line": 137
+          "line": 147
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.restartRequired",
         "start": {
           "column": 29,
-          "line": 134
+          "line": 144
         }
       },
       {
         "defaultMessage": "!!!Official translations are English & German. All other languages are community based translations.",
         "end": {
           "column": 3,
-          "line": 141
+          "line": 151
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.languageDisclaimer",
         "start": {
           "column": 22,
-          "line": 138
+          "line": 148
         }
       }
     ],
@@ -3467,68 +3659,198 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "!!!Support Ferdi",
+        "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
-          "line": 11
+          "line": 10
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.headline",
         "start": {
           "column": 12,
-          "line": 8
+          "line": 7
         }
       },
       {
-        "defaultMessage": "!!!Do you like Ferdi? Spread the love!",
+        "defaultMessage": "!!!Do you like Ferdi?",
         "end": {
           "column": 3,
-          "line": 15
+          "line": 14
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.title",
         "start": {
           "column": 9,
-          "line": 12
+          "line": 11
         }
       },
       {
-        "defaultMessage": "!!!Star on GitHub",
+        "defaultMessage": "!!!<p>Ferdi is an open-source and a community-lead application.</p><p>Thanks to the people who make this possbile:</p>",
         "end": {
           "column": 3,
+          "line": 18
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.aboutIntro",
+        "start": {
+          "column": 14,
+          "line": 15
+        }
+      },
+      {
+        "defaultMessage": "!!!Full list of contributor",
+        "end": {
+          "column": 3,
+          "line": 22
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textListContributors",
+        "start": {
+          "column": 24,
           "line": 19
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.github",
-        "start": {
-          "column": 10,
-          "line": 16
         }
       },
       {
-        "defaultMessage": "!!!Tell your Friends",
+        "defaultMessage": "!!!here",
         "end": {
           "column": 3,
+          "line": 26
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textListContributorsHere",
+        "start": {
+          "column": 28,
           "line": 23
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.share",
-        "start": {
-          "column": 9,
-          "line": 20
         }
       },
       {
-        "defaultMessage": "!!!Support our Open Collective",
+        "defaultMessage": "!!!The development of Ferdi is done by volunteers. People who use Ferdi like you. They maintain, fix, and improve Ferdi in their spare time.",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 30
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.openCollective",
+        "id": "settings.supportFerdi.textVolunteers",
         "start": {
           "column": 18,
-          "line": 24
+          "line": 27
+        }
+      },
+      {
+        "defaultMessage": "!!!Support is always welcome. You can find a list of the help we need",
+        "end": {
+          "column": 3,
+          "line": 34
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textSupportWelcome",
+        "start": {
+          "column": 22,
+          "line": 31
+        }
+      },
+      {
+        "defaultMessage": "!!!here",
+        "end": {
+          "column": 3,
+          "line": 38
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textSupportWelcomeHere",
+        "start": {
+          "column": 26,
+          "line": 35
+        }
+      },
+      {
+        "defaultMessage": "!!!While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our",
+        "end": {
+          "column": 3,
+          "line": 42
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textExpenses",
+        "start": {
+          "column": 16,
+          "line": 39
+        }
+      },
+      {
+        "defaultMessage": "!!!Open Collective",
+        "end": {
+          "column": 3,
+          "line": 46
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textOpenCollective",
+        "start": {
+          "column": 22,
+          "line": 43
+        }
+      },
+      {
+        "defaultMessage": "!!!If you feel like supporting Ferdi development with a donation, you can do so on both,",
+        "end": {
+          "column": 3,
+          "line": 50
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textDonation",
+        "start": {
+          "column": 16,
+          "line": 47
+        }
+      },
+      {
+        "defaultMessage": "!!!and",
+        "end": {
+          "column": 3,
+          "line": 54
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textDonationAnd",
+        "start": {
+          "column": 19,
+          "line": 51
+        }
+      },
+      {
+        "defaultMessage": "!!!GitHub Sponsors",
+        "end": {
+          "column": 3,
+          "line": 58
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textGitHubSponsors",
+        "start": {
+          "column": 22,
+          "line": 55
+        }
+      },
+      {
+        "defaultMessage": "!!!Open Survey",
+        "end": {
+          "column": 3,
+          "line": 62
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.openSurvey",
+        "start": {
+          "column": 14,
+          "line": 59
+        }
+      },
+      {
+        "defaultMessage": "!!!Do you want to help us improve Ferdi?",
+        "end": {
+          "column": 3,
+          "line": 66
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.bannerText",
+        "start": {
+          "column": 14,
+          "line": 63
         }
       }
     ],
@@ -3540,104 +3862,104 @@
         "defaultMessage": "!!!Team",
         "end": {
           "column": 3,
-          "line": 20
+          "line": 21
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.headline",
         "start": {
           "column": 12,
-          "line": 17
+          "line": 18
         }
       },
       {
         "defaultMessage": "!!!Franz Team Management",
         "end": {
           "column": 3,
-          "line": 24
+          "line": 25
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.contentHeadline",
         "start": {
           "column": 19,
-          "line": 21
+          "line": 22
         }
       },
       {
         "defaultMessage": "!!!Your are currently using Franz Servers, which is why you have access to Team Management.",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 29
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.intro",
         "start": {
           "column": 9,
-          "line": 25
+          "line": 26
         }
       },
       {
         "defaultMessage": "!!!Franz's Team Management allows you to manage Franz Subscriptions for multiple users. Please keep in mind that having a Franz Premium subscription will give you no advantages in using Ferdi: The only reason you still have access to Team Management is so you can manage your legacy Franz Teams and so that you don't loose any functionality in managing your account.",
         "end": {
           "column": 3,
-          "line": 32
+          "line": 33
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.copy",
         "start": {
           "column": 8,
-          "line": 29
+          "line": 30
         }
       },
       {
         "defaultMessage": "!!!Manage your Team on meetfranz.com",
         "end": {
           "column": 3,
-          "line": 36
+          "line": 37
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.manageAction",
         "start": {
           "column": 16,
-          "line": 33
+          "line": 34
         }
       },
       {
         "defaultMessage": "!!!Upgrade your Account",
         "end": {
           "column": 3,
-          "line": 40
+          "line": 41
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.upgradeAction",
         "start": {
           "column": 17,
-          "line": 37
+          "line": 38
         }
       },
       {
         "defaultMessage": "!!!Teams are unavailable",
         "end": {
           "column": 3,
-          "line": 44
+          "line": 45
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.teamsUnavailable",
         "start": {
           "column": 20,
-          "line": 41
+          "line": 42
         }
       },
       {
         "defaultMessage": "!!!Teams are currently only available when using the Franz Server and after paying for Franz Professional. Please change your server to https://api.franzinfra.com to use teams.",
         "end": {
           "column": 3,
-          "line": 48
+          "line": 49
         },
         "file": "src/components/settings/team/TeamDashboard.js",
         "id": "settings.team.teamsUnavailableInfo",
         "start": {
           "column": 24,
-          "line": 45
+          "line": 46
         }
       }
     ],
@@ -4351,15 +4673,15 @@
         }
       },
       {
-        "defaultMessage": "!!!Disable hibernation",
+        "defaultMessage": "!!!Enable hibernation",
         "end": {
           "column": 3,
           "line": 39
         },
         "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.disableHibernation",
+        "id": "settings.service.form.enableHibernation",
         "start": {
-          "column": 22,
+          "column": 21,
           "line": 36
         }
       },
@@ -4580,494 +4902,585 @@
         "defaultMessage": "!!!Launch Ferdi on start",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 34
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.autoLaunchOnStart",
         "start": {
           "column": 21,
-          "line": 30
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!Open in background",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 38
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.autoLaunchInBackground",
         "start": {
           "column": 26,
-          "line": 34
+          "line": 35
         }
       },
       {
         "defaultMessage": "!!!Keep Ferdi in background when closing the window",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 42
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.runInBackground",
         "start": {
           "column": 19,
-          "line": 38
+          "line": 39
         }
       },
       {
         "defaultMessage": "!!!Start minimized",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 46
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.startMinimized",
         "start": {
           "column": 18,
-          "line": 42
+          "line": 43
         }
       },
       {
-        "defaultMessage": "!!!Always show Ferdi in system tray",
+        "defaultMessage": "!!!Always show Ferdi in System Tray",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 50
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSystemTray",
         "start": {
           "column": 20,
-          "line": 46
+          "line": 47
+        }
+      },
+      {
+        "defaultMessage": "!!!Always show Ferdi in Menu Bar",
+        "end": {
+          "column": 3,
+          "line": 54
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.enableMenuBar",
+        "start": {
+          "column": 17,
+          "line": 51
         }
       },
       {
         "defaultMessage": "!!!Reload Ferdi after system resume",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 58
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.reloadAfterResume",
         "start": {
           "column": 21,
-          "line": 50
+          "line": 55
         }
       },
       {
         "defaultMessage": "!!!Minimize Ferdi to system tray",
         "end": {
           "column": 3,
-          "line": 57
+          "line": 62
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.minimizeToSystemTray",
         "start": {
           "column": 24,
-          "line": 54
+          "line": 59
+        }
+      },
+      {
+        "defaultMessage": "!!!Close Ferdi to system tray",
+        "end": {
+          "column": 3,
+          "line": 66
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.closeToSystemTray",
+        "start": {
+          "column": 21,
+          "line": 63
         }
       },
       {
         "defaultMessage": "!!!Don't show message content in notifications",
         "end": {
           "column": 3,
-          "line": 61
+          "line": 70
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.privateNotifications",
         "start": {
           "column": 24,
-          "line": 58
+          "line": 67
+        }
+      },
+      {
+        "defaultMessage": "!!!Don't show notifications for clipboard events",
+        "end": {
+          "column": 3,
+          "line": 74
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.clipboardNotifications",
+        "start": {
+          "column": 26,
+          "line": 71
+        }
+      },
+      {
+        "defaultMessage": "!!!Notify TaskBar/Dock on new message",
+        "end": {
+          "column": 3,
+          "line": 78
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.notifyTaskBarOnMessage",
+        "start": {
+          "column": 26,
+          "line": 75
         }
       },
       {
         "defaultMessage": "!!!Navigation bar behaviour",
         "end": {
           "column": 3,
-          "line": 65
+          "line": 82
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.navigationBarBehaviour",
         "start": {
           "column": 26,
-          "line": 62
+          "line": 79
+        }
+      },
+      {
+        "defaultMessage": "!!!Search engine",
+        "end": {
+          "column": 3,
+          "line": 86
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.searchEngine",
+        "start": {
+          "column": 16,
+          "line": 83
         }
       },
       {
         "defaultMessage": "!!!Send telemetry data",
         "end": {
           "column": 3,
-          "line": 69
+          "line": 90
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.sentry",
         "start": {
           "column": 10,
-          "line": 66
+          "line": 87
         }
       },
       {
         "defaultMessage": "!!!Enable service hibernation",
         "end": {
           "column": 3,
-          "line": 73
+          "line": 94
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.hibernate",
         "start": {
           "column": 13,
-          "line": 70
+          "line": 91
         }
       },
       {
         "defaultMessage": "!!!Keep services in hibernation on startup",
         "end": {
           "column": 3,
-          "line": 77
+          "line": 98
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.hibernateOnStartup",
         "start": {
           "column": 22,
-          "line": 74
+          "line": 95
         }
       },
       {
         "defaultMessage": "!!!Hibernation strategy",
         "end": {
           "column": 3,
-          "line": 81
+          "line": 102
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.hibernationStrategy",
         "start": {
           "column": 23,
-          "line": 78
+          "line": 99
         }
       },
       {
         "defaultMessage": "!!!Todo Server",
         "end": {
           "column": 3,
-          "line": 85
+          "line": 106
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.predefinedTodoServer",
         "start": {
           "column": 24,
-          "line": 82
+          "line": 103
         }
       },
       {
         "defaultMessage": "!!!Custom TodoServer",
         "end": {
           "column": 3,
-          "line": 89
+          "line": 110
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.customTodoServer",
         "start": {
           "column": 20,
-          "line": 86
+          "line": 107
         }
       },
       {
         "defaultMessage": "!!!Enable Password Lock",
         "end": {
           "column": 3,
-          "line": 93
+          "line": 114
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableLock",
         "start": {
           "column": 14,
-          "line": 90
+          "line": 111
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 97
+          "line": 118
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.lockPassword",
         "start": {
           "column": 16,
-          "line": 94
+          "line": 115
         }
       },
       {
         "defaultMessage": "!!!Allow using Touch ID to unlock",
         "end": {
           "column": 3,
-          "line": 101
+          "line": 122
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.useTouchIdToUnlock",
         "start": {
           "column": 22,
-          "line": 98
+          "line": 119
         }
       },
       {
         "defaultMessage": "!!!Lock after inactivity",
         "end": {
           "column": 3,
-          "line": 105
+          "line": 126
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.inactivityLock",
         "start": {
           "column": 18,
-          "line": 102
+          "line": 123
         }
       },
       {
         "defaultMessage": "!!!Enable scheduled Do-not-Disturb",
         "end": {
           "column": 3,
-          "line": 109
+          "line": 130
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDEnabled",
         "start": {
           "column": 23,
-          "line": 106
+          "line": 127
         }
       },
       {
         "defaultMessage": "!!!From",
         "end": {
           "column": 3,
-          "line": 113
+          "line": 134
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDStart",
         "start": {
           "column": 21,
-          "line": 110
+          "line": 131
         }
       },
       {
         "defaultMessage": "!!!To",
         "end": {
           "column": 3,
-          "line": 117
+          "line": 138
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDEnd",
         "start": {
           "column": 19,
-          "line": 114
+          "line": 135
         }
       },
       {
         "defaultMessage": "!!!Language",
         "end": {
           "column": 3,
-          "line": 121
+          "line": 142
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.language",
         "start": {
           "column": 12,
-          "line": 118
+          "line": 139
         }
       },
       {
         "defaultMessage": "!!!Dark Mode",
         "end": {
           "column": 3,
-          "line": 125
+          "line": 146
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.darkMode",
         "start": {
           "column": 12,
-          "line": 122
+          "line": 143
         }
       },
       {
         "defaultMessage": "!!!Synchronize dark mode with my OS's dark mode setting",
         "end": {
           "column": 3,
-          "line": 129
+          "line": 150
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.adaptableDarkMode",
         "start": {
           "column": 21,
-          "line": 126
+          "line": 147
         }
       },
       {
         "defaultMessage": "!!!Enable universal Dark Mode",
         "end": {
           "column": 3,
-          "line": 133
+          "line": 154
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.universalDarkMode",
         "start": {
           "column": 21,
-          "line": 130
+          "line": 151
         }
       },
       {
         "defaultMessage": "!!!Sidebar width",
         "end": {
           "column": 3,
-          "line": 137
+          "line": 158
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.serviceRibbonWidth",
         "start": {
           "column": 22,
-          "line": 134
+          "line": 155
         }
       },
       {
         "defaultMessage": "!!!Service icon size",
         "end": {
           "column": 3,
-          "line": 141
+          "line": 162
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.iconSize",
         "start": {
           "column": 12,
-          "line": 138
+          "line": 159
+        }
+      },
+      {
+        "defaultMessage": "!!!Use vertical style",
+        "end": {
+          "column": 3,
+          "line": 166
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.useVerticalStyle",
+        "start": {
+          "column": 20,
+          "line": 163
+        }
+      },
+      {
+        "defaultMessage": "!!!Always show workspace drawer",
+        "end": {
+          "column": 3,
+          "line": 170
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.alwaysShowWorkspaces",
+        "start": {
+          "column": 24,
+          "line": 167
         }
       },
       {
         "defaultMessage": "!!!Accent color",
         "end": {
           "column": 3,
-          "line": 145
+          "line": 174
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.accentColor",
         "start": {
           "column": 15,
-          "line": 142
+          "line": 171
         }
       },
       {
         "defaultMessage": "!!!Display disabled services tabs",
         "end": {
           "column": 3,
-          "line": 149
+          "line": 178
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showDisabledServices",
         "start": {
           "column": 24,
-          "line": 146
+          "line": 175
         }
       },
       {
         "defaultMessage": "!!!Show unread message badge when notifications are disabled",
         "end": {
           "column": 3,
-          "line": 153
+          "line": 182
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showMessagesBadgesWhenMuted",
         "start": {
           "column": 29,
-          "line": 150
+          "line": 179
         }
       },
       {
         "defaultMessage": "!!!Show draggable area on window",
         "end": {
           "column": 3,
-          "line": 157
+          "line": 186
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showDragArea",
         "start": {
           "column": 16,
-          "line": 154
+          "line": 183
         }
       },
       {
         "defaultMessage": "!!!Enable spell checking",
         "end": {
           "column": 3,
-          "line": 161
+          "line": 190
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSpellchecking",
         "start": {
           "column": 23,
-          "line": 158
+          "line": 187
         }
       },
       {
         "defaultMessage": "!!!Enable GPU Acceleration",
         "end": {
           "column": 3,
-          "line": 165
+          "line": 194
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableGPUAcceleration",
         "start": {
           "column": 25,
-          "line": 162
+          "line": 191
         }
       },
       {
         "defaultMessage": "!!!Include beta versions",
         "end": {
           "column": 3,
-          "line": 169
+          "line": 198
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.beta",
         "start": {
           "column": 8,
-          "line": 166
+          "line": 195
         }
       },
       {
         "defaultMessage": "!!!Enable updates",
         "end": {
           "column": 3,
-          "line": 173
+          "line": 202
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
         "start": {
           "column": 20,
-          "line": 170
+          "line": 199
         }
       },
       {
         "defaultMessage": "!!!Enable Franz Todos",
         "end": {
           "column": 3,
-          "line": 177
+          "line": 206
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableTodos",
         "start": {
           "column": 15,
-          "line": 174
+          "line": 203
         }
       },
       {
         "defaultMessage": "!!!Keep all workspaces loaded",
         "end": {
           "column": 3,
-          "line": 181
+          "line": 210
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.keepAllWorkspacesLoaded",
         "start": {
           "column": 27,
-          "line": 178
+          "line": 207
         }
       }
     ],
@@ -5300,6 +5713,63 @@
       }
     ],
     "path": "src/features/delayApp/Component.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Nightly Builds",
+        "end": {
+          "column": 3,
+          "line": 17
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.title",
+        "start": {
+          "column": 9,
+          "line": 14
+        }
+      },
+      {
+        "defaultMessage": "!!!Nightly builds are highly experimental versions of Ferdi that may contain unpolished or uncompleted features. These nightly builds are mainly used by developers to test their newly developed features and how they will perform in the final build. If you don't know what you are doing, we suggest not activating nightly builds.",
+        "end": {
+          "column": 3,
+          "line": 21
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.info",
+        "start": {
+          "column": 8,
+          "line": 18
+        }
+      },
+      {
+        "defaultMessage": "!!!Activate",
+        "end": {
+          "column": 3,
+          "line": 25
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.activate",
+        "start": {
+          "column": 12,
+          "line": 22
+        }
+      },
+      {
+        "defaultMessage": "!!!Cancel",
+        "end": {
+          "column": 3,
+          "line": 29
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.cancel",
+        "start": {
+          "column": 10,
+          "line": 26
+        }
+      }
+    ],
+    "path": "src/features/nightlyBuilds/Component.json"
   },
   {
     "descriptors": [
@@ -5543,52 +6013,52 @@
         "defaultMessage": "!!!Downgrade your Franz Plan",
         "end": {
           "column": 3,
-          "line": 19
+          "line": 17
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.title",
         "start": {
           "column": 15,
-          "line": 16
+          "line": 14
         }
       },
       {
         "defaultMessage": "!!!You're about to downgrade to our Free account. Are you sure? Click here instead to get more services and functionality for just {currency}{price} a month.",
         "end": {
           "column": 3,
-          "line": 23
+          "line": 21
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.message",
         "start": {
           "column": 17,
-          "line": 20
+          "line": 18
         }
       },
       {
         "defaultMessage": "!!!Downgrade to Free",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 25
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.cta.downgrade",
         "start": {
           "column": 22,
-          "line": 24
+          "line": 22
         }
       },
       {
         "defaultMessage": "!!!Choose Personal",
         "end": {
           "column": 3,
-          "line": 31
+          "line": 29
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.cta.upgrade",
         "start": {
           "column": 20,
-          "line": 28
+          "line": 26
         }
       }
     ],
@@ -5696,39 +6166,39 @@
         "defaultMessage": "!!!QuickSwitch",
         "end": {
           "column": 3,
-          "line": 19
+          "line": 20
         },
         "file": "src/features/quickSwitch/Component.js",
         "id": "feature.quickSwitch.title",
         "start": {
           "column": 9,
-          "line": 16
+          "line": 17
         }
       },
       {
         "defaultMessage": "!!!Search...",
         "end": {
           "column": 3,
-          "line": 23
+          "line": 24
         },
         "file": "src/features/quickSwitch/Component.js",
         "id": "feature.quickSwitch.search",
         "start": {
           "column": 10,
-          "line": 20
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!Select a service with TAB, ↑ and ↓. Open a service with ENTER.",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 28
         },
         "file": "src/features/quickSwitch/Component.js",
         "id": "feature.quickSwitch.info",
         "start": {
           "column": 8,
-          "line": 24
+          "line": 25
         }
       }
     ],
@@ -6289,7 +6759,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any services yet.",
+        "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
           "line": 52
@@ -6432,26 +6902,26 @@
         "defaultMessage": "!!!No services added yet",
         "end": {
           "column": 3,
-          "line": 16
+          "line": 14
         },
         "file": "src/features/workspaces/components/WorkspaceDrawerItem.js",
         "id": "workspaceDrawer.item.noServicesAddedYet",
         "start": {
           "column": 22,
-          "line": 13
+          "line": 11
         }
       },
       {
         "defaultMessage": "!!!edit",
         "end": {
           "column": 3,
-          "line": 20
+          "line": 18
         },
         "file": "src/features/workspaces/components/WorkspaceDrawerItem.js",
         "id": "workspaceDrawer.item.contextMenuEdit",
         "start": {
           "column": 19,
-          "line": 17
+          "line": 15
         }
       }
     ],
@@ -6473,7 +6943,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any workspaces yet.",
+        "defaultMessage": "!!!You haven't created any workspaces yet.",
         "end": {
           "column": 3,
           "line": 27
@@ -6896,949 +7366,962 @@
         "defaultMessage": "!!!Edit",
         "end": {
           "column": 3,
-          "line": 21
+          "line": 27
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit",
         "start": {
           "column": 8,
-          "line": 18
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Undo",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 31
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.undo",
         "start": {
           "column": 8,
-          "line": 22
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Redo",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 35
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.redo",
         "start": {
           "column": 8,
-          "line": 26
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Cut",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 39
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.cut",
         "start": {
           "column": 7,
-          "line": 30
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Copy",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 43
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.copy",
         "start": {
           "column": 8,
-          "line": 34
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Paste",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 47
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.paste",
         "start": {
           "column": 9,
-          "line": 38
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Paste And Match Style",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 51
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.pasteAndMatchStyle",
         "start": {
           "column": 22,
-          "line": 42
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Delete",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 55
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.delete",
         "start": {
           "column": 10,
-          "line": 46
+          "line": 52
         }
       },
       {
         "defaultMessage": "!!!Select All",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 59
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.selectAll",
         "start": {
           "column": 13,
-          "line": 50
+          "line": 56
         }
       },
       {
         "defaultMessage": "!!!Find in Page",
         "end": {
           "column": 3,
-          "line": 57
+          "line": 63
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.findInPage",
         "start": {
           "column": 14,
-          "line": 54
+          "line": 60
         }
       },
       {
         "defaultMessage": "!!!Speech",
         "end": {
           "column": 3,
-          "line": 61
+          "line": 67
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.speech",
         "start": {
           "column": 10,
-          "line": 58
+          "line": 64
         }
       },
       {
         "defaultMessage": "!!!Start Speaking",
         "end": {
           "column": 3,
-          "line": 65
+          "line": 71
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.startSpeaking",
         "start": {
           "column": 17,
-          "line": 62
+          "line": 68
         }
       },
       {
         "defaultMessage": "!!!Stop Speaking",
         "end": {
           "column": 3,
-          "line": 69
+          "line": 75
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.stopSpeaking",
         "start": {
           "column": 16,
-          "line": 66
+          "line": 72
         }
       },
       {
         "defaultMessage": "!!!Start Dictation",
         "end": {
           "column": 3,
-          "line": 73
+          "line": 79
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.startDictation",
         "start": {
           "column": 18,
-          "line": 70
+          "line": 76
         }
       },
       {
         "defaultMessage": "!!!Emoji & Symbols",
         "end": {
           "column": 3,
-          "line": 77
+          "line": 83
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.emojiSymbols",
         "start": {
           "column": 16,
-          "line": 74
+          "line": 80
         }
       },
       {
         "defaultMessage": "!!!Open Quick Switch",
         "end": {
           "column": 3,
-          "line": 81
+          "line": 87
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.openQuickSwitch",
         "start": {
           "column": 19,
-          "line": 78
+          "line": 84
         }
       },
       {
         "defaultMessage": "!!!Back",
         "end": {
           "column": 3,
-          "line": 85
+          "line": 91
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.back",
         "start": {
           "column": 8,
-          "line": 82
+          "line": 88
         }
       },
       {
         "defaultMessage": "!!!Forward",
         "end": {
           "column": 3,
-          "line": 89
+          "line": 95
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.forward",
         "start": {
           "column": 11,
-          "line": 86
+          "line": 92
         }
       },
       {
         "defaultMessage": "!!!Actual Size",
         "end": {
           "column": 3,
-          "line": 93
+          "line": 99
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.resetZoom",
         "start": {
           "column": 13,
-          "line": 90
+          "line": 96
         }
       },
       {
         "defaultMessage": "!!!Zoom In",
         "end": {
           "column": 3,
-          "line": 97
+          "line": 103
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.zoomIn",
         "start": {
           "column": 10,
-          "line": 94
+          "line": 100
         }
       },
       {
         "defaultMessage": "!!!Zoom Out",
         "end": {
           "column": 3,
-          "line": 101
+          "line": 107
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.zoomOut",
         "start": {
           "column": 11,
-          "line": 98
+          "line": 104
         }
       },
       {
         "defaultMessage": "!!!Enter Full Screen",
         "end": {
           "column": 3,
-          "line": 105
+          "line": 111
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.enterFullScreen",
         "start": {
           "column": 19,
-          "line": 102
+          "line": 108
         }
       },
       {
         "defaultMessage": "!!!Exit Full Screen",
         "end": {
           "column": 3,
-          "line": 109
+          "line": 115
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.exitFullScreen",
         "start": {
           "column": 18,
-          "line": 106
+          "line": 112
         }
       },
       {
         "defaultMessage": "!!!Toggle Full Screen",
         "end": {
           "column": 3,
-          "line": 113
+          "line": 119
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleFullScreen",
         "start": {
           "column": 20,
-          "line": 110
+          "line": 116
         }
       },
       {
         "defaultMessage": "!!!Toggle Dark Mode",
         "end": {
           "column": 3,
-          "line": 117
+          "line": 123
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleDarkMode",
         "start": {
           "column": 18,
-          "line": 114
+          "line": 120
         }
       },
       {
         "defaultMessage": "!!!Toggle Developer Tools",
         "end": {
           "column": 3,
-          "line": 121
+          "line": 127
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleDevTools",
         "start": {
           "column": 18,
-          "line": 118
+          "line": 124
         }
       },
       {
         "defaultMessage": "!!!Toggle Todos Developer Tools",
         "end": {
           "column": 3,
-          "line": 125
+          "line": 131
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleTodosDevTools",
         "start": {
           "column": 23,
-          "line": 122
+          "line": 128
         }
       },
       {
         "defaultMessage": "!!!Toggle Service Developer Tools",
         "end": {
           "column": 3,
-          "line": 129
+          "line": 135
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleServiceDevTools",
         "start": {
           "column": 25,
-          "line": 126
+          "line": 132
         }
       },
       {
         "defaultMessage": "!!!Reload Service",
         "end": {
           "column": 3,
-          "line": 133
+          "line": 139
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.reloadService",
         "start": {
           "column": 17,
-          "line": 130
+          "line": 136
         }
       },
       {
         "defaultMessage": "!!!Reload Ferdi",
         "end": {
           "column": 3,
-          "line": 137
+          "line": 143
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.reloadFranz",
         "start": {
           "column": 15,
-          "line": 134
+          "line": 140
         }
       },
       {
         "defaultMessage": "!!!Lock Ferdi",
         "end": {
           "column": 3,
-          "line": 141
+          "line": 147
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.lockFerdi",
         "start": {
           "column": 13,
-          "line": 138
+          "line": 144
+        }
+      },
+      {
+        "defaultMessage": "!!!Reload ToDos",
+        "end": {
+          "column": 3,
+          "line": 151
+        },
+        "file": "src/lib/Menu.js",
+        "id": "menu.view.reloadTodos",
+        "start": {
+          "column": 15,
+          "line": 148
         }
       },
       {
         "defaultMessage": "!!!Minimize",
         "end": {
           "column": 3,
-          "line": 145
+          "line": 155
         },
         "file": "src/lib/Menu.js",
         "id": "menu.window.minimize",
         "start": {
           "column": 12,
-          "line": 142
+          "line": 152
         }
       },
       {
         "defaultMessage": "!!!Close",
         "end": {
           "column": 3,
-          "line": 149
+          "line": 159
         },
         "file": "src/lib/Menu.js",
         "id": "menu.window.close",
         "start": {
           "column": 9,
-          "line": 146
+          "line": 156
         }
       },
       {
         "defaultMessage": "!!!Learn More",
         "end": {
           "column": 3,
-          "line": 153
+          "line": 163
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.learnMore",
         "start": {
           "column": 13,
-          "line": 150
+          "line": 160
         }
       },
       {
         "defaultMessage": "!!!Changelog",
         "end": {
           "column": 3,
-          "line": 157
+          "line": 167
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.changelog",
         "start": {
           "column": 13,
-          "line": 154
+          "line": 164
         }
       },
       {
         "defaultMessage": "!!!Support",
         "end": {
           "column": 3,
-          "line": 161
+          "line": 171
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.support",
         "start": {
           "column": 11,
-          "line": 158
+          "line": 168
         }
       },
       {
         "defaultMessage": "!!!Copy Debug Information",
         "end": {
           "column": 3,
-          "line": 165
+          "line": 175
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.debugInfo",
         "start": {
           "column": 13,
-          "line": 162
+          "line": 172
         }
       },
       {
         "defaultMessage": "!!!Publish Debug Information",
         "end": {
           "column": 3,
-          "line": 169
+          "line": 179
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.publishDebugInfo",
         "start": {
           "column": 20,
-          "line": 166
+          "line": 176
         }
       },
       {
         "defaultMessage": "!!!Ferdi Debug Information",
         "end": {
           "column": 3,
-          "line": 173
+          "line": 183
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.debugInfoCopiedHeadline",
         "start": {
           "column": 27,
-          "line": 170
+          "line": 180
         }
       },
       {
         "defaultMessage": "!!!Your Debug Information has been copied to your clipboard.",
         "end": {
           "column": 3,
-          "line": 177
+          "line": 187
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.debugInfoCopiedBody",
         "start": {
           "column": 23,
-          "line": 174
+          "line": 184
         }
       },
       {
         "defaultMessage": "!!!Unlock with Touch ID",
         "end": {
           "column": 3,
-          "line": 181
+          "line": 191
         },
         "file": "src/lib/Menu.js",
         "id": "locked.touchId",
         "start": {
           "column": 11,
-          "line": 178
+          "line": 188
         }
       },
       {
         "defaultMessage": "!!!unlock via Touch ID",
         "end": {
           "column": 3,
-          "line": 185
+          "line": 195
         },
         "file": "src/lib/Menu.js",
         "id": "locked.touchIdPrompt",
         "start": {
           "column": 17,
-          "line": 182
+          "line": 192
         }
       },
       {
         "defaultMessage": "!!!Terms of Service",
         "end": {
           "column": 3,
-          "line": 189
+          "line": 199
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.tos",
         "start": {
           "column": 7,
-          "line": 186
+          "line": 196
         }
       },
       {
         "defaultMessage": "!!!Privacy Statement",
         "end": {
           "column": 3,
-          "line": 193
+          "line": 203
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.privacy",
         "start": {
           "column": 11,
-          "line": 190
+          "line": 200
         }
       },
       {
         "defaultMessage": "!!!File",
         "end": {
           "column": 3,
-          "line": 197
+          "line": 207
         },
         "file": "src/lib/Menu.js",
         "id": "menu.file",
         "start": {
           "column": 8,
-          "line": 194
+          "line": 204
         }
       },
       {
         "defaultMessage": "!!!View",
         "end": {
           "column": 3,
-          "line": 201
+          "line": 211
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view",
         "start": {
           "column": 8,
-          "line": 198
+          "line": 208
         }
       },
       {
         "defaultMessage": "!!!Services",
         "end": {
           "column": 3,
-          "line": 205
+          "line": 215
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services",
         "start": {
           "column": 12,
-          "line": 202
+          "line": 212
         }
       },
       {
         "defaultMessage": "!!!Window",
         "end": {
           "column": 3,
-          "line": 209
+          "line": 219
         },
         "file": "src/lib/Menu.js",
         "id": "menu.window",
         "start": {
           "column": 10,
-          "line": 206
+          "line": 216
         }
       },
       {
         "defaultMessage": "!!!Help",
         "end": {
           "column": 3,
-          "line": 213
+          "line": 223
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help",
         "start": {
           "column": 8,
-          "line": 210
+          "line": 220
         }
       },
       {
         "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
-          "line": 217
+          "line": 227
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.about",
         "start": {
           "column": 9,
-          "line": 214
+          "line": 224
         }
       },
       {
         "defaultMessage": "!!!What's new?",
         "end": {
           "column": 3,
-          "line": 221
+          "line": 231
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.announcement",
         "start": {
           "column": 16,
-          "line": 218
+          "line": 228
         }
       },
       {
         "defaultMessage": "!!!Settings",
         "end": {
           "column": 3,
-          "line": 225
+          "line": 235
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.settings",
         "start": {
           "column": 12,
-          "line": 222
+          "line": 232
         }
       },
       {
         "defaultMessage": "!!!Check for updates",
         "end": {
           "column": 3,
-          "line": 229
+          "line": 239
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.checkForUpdates",
         "start": {
           "column": 19,
-          "line": 226
+          "line": 236
         }
       },
       {
         "defaultMessage": "!!!Hide",
         "end": {
           "column": 3,
-          "line": 233
+          "line": 243
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.hide",
         "start": {
           "column": 8,
-          "line": 230
+          "line": 240
         }
       },
       {
         "defaultMessage": "!!!Hide Others",
         "end": {
           "column": 3,
-          "line": 237
+          "line": 247
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.hideOthers",
         "start": {
           "column": 14,
-          "line": 234
+          "line": 244
         }
       },
       {
         "defaultMessage": "!!!Unhide",
         "end": {
           "column": 3,
-          "line": 241
+          "line": 251
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.unhide",
         "start": {
           "column": 10,
-          "line": 238
+          "line": 248
         }
       },
       {
         "defaultMessage": "!!!Auto-hide menu bar",
         "end": {
           "column": 3,
-          "line": 245
+          "line": 255
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.autohideMenuBar",
         "start": {
           "column": 19,
-          "line": 242
+          "line": 252
         }
       },
       {
         "defaultMessage": "!!!Quit",
         "end": {
           "column": 3,
-          "line": 249
+          "line": 259
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.quit",
         "start": {
           "column": 8,
-          "line": 246
+          "line": 256
         }
       },
       {
         "defaultMessage": "!!!Add New Service...",
         "end": {
           "column": 3,
-          "line": 253
+          "line": 263
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.addNewService",
         "start": {
           "column": 17,
-          "line": 250
+          "line": 260
         }
       },
       {
         "defaultMessage": "!!!Add New Workspace...",
         "end": {
           "column": 3,
-          "line": 257
+          "line": 267
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.addNewWorkspace",
         "start": {
           "column": 19,
-          "line": 254
+          "line": 264
         }
       },
       {
         "defaultMessage": "!!!Open workspace drawer",
         "end": {
           "column": 3,
-          "line": 261
+          "line": 271
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.openWorkspaceDrawer",
         "start": {
           "column": 23,
-          "line": 258
+          "line": 268
         }
       },
       {
         "defaultMessage": "!!!Close workspace drawer",
         "end": {
           "column": 3,
-          "line": 265
+          "line": 275
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.closeWorkspaceDrawer",
         "start": {
           "column": 24,
-          "line": 262
+          "line": 272
         }
       },
       {
         "defaultMessage": "!!!Activate next service...",
         "end": {
           "column": 3,
-          "line": 269
+          "line": 279
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.setNextServiceActive",
         "start": {
           "column": 23,
-          "line": 266
+          "line": 276
         }
       },
       {
         "defaultMessage": "!!!Activate previous service...",
         "end": {
           "column": 3,
-          "line": 273
+          "line": 283
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.activatePreviousService",
         "start": {
           "column": 27,
-          "line": 270
+          "line": 280
         }
       },
       {
         "defaultMessage": "!!!Disable notifications & audio",
         "end": {
           "column": 3,
-          "line": 277
+          "line": 287
         },
         "file": "src/lib/Menu.js",
         "id": "sidebar.muteApp",
         "start": {
           "column": 11,
-          "line": 274
+          "line": 284
         }
       },
       {
         "defaultMessage": "!!!Enable notifications & audio",
         "end": {
           "column": 3,
-          "line": 281
+          "line": 291
         },
         "file": "src/lib/Menu.js",
         "id": "sidebar.unmuteApp",
         "start": {
           "column": 13,
-          "line": 278
+          "line": 288
         }
       },
       {
         "defaultMessage": "!!!Workspaces",
         "end": {
           "column": 3,
-          "line": 285
+          "line": 295
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces",
         "start": {
           "column": 14,
-          "line": 282
+          "line": 292
         }
       },
       {
         "defaultMessage": "!!!Default",
         "end": {
           "column": 3,
-          "line": 289
+          "line": 299
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.defaultWorkspace",
         "start": {
           "column": 20,
-          "line": 286
+          "line": 296
         }
       },
       {
         "defaultMessage": "!!!Todos",
         "end": {
           "column": 3,
-          "line": 293
+          "line": 303
         },
         "file": "src/lib/Menu.js",
         "id": "menu.todos",
         "start": {
           "column": 9,
-          "line": 290
+          "line": 300
         }
       },
       {
         "defaultMessage": "!!!Open Todos drawer",
         "end": {
           "column": 3,
-          "line": 297
+          "line": 307
         },
         "file": "src/lib/Menu.js",
         "id": "menu.Todoss.openTodosDrawer",
         "start": {
           "column": 19,
-          "line": 294
+          "line": 304
         }
       },
       {
         "defaultMessage": "!!!Close Todos drawer",
         "end": {
           "column": 3,
-          "line": 301
+          "line": 311
         },
         "file": "src/lib/Menu.js",
         "id": "menu.Todoss.closeTodosDrawer",
         "start": {
           "column": 20,
-          "line": 298
+          "line": 308
         }
       },
       {
         "defaultMessage": "!!!Enable Todos",
         "end": {
           "column": 3,
-          "line": 305
+          "line": 315
         },
         "file": "src/lib/Menu.js",
         "id": "menu.todos.enableTodos",
         "start": {
           "column": 15,
-          "line": 302
+          "line": 312
         }
       },
       {
         "defaultMessage": "!!!Home",
         "end": {
           "column": 3,
-          "line": 309
+          "line": 319
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.goHome",
         "start": {
           "column": 17,
-          "line": 306
+          "line": 316
         }
       }
     ],
