@@ -4,7 +4,7 @@ import { webContents } from '@electron/remote';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
-import { TODOS_RECIPE_ID, todosStore } from '../features/todos';
+import { todosStore } from '../features/todos';
 import { isValidExternalURL } from '../helpers/url-helpers';
 import UserAgent from './UserAgent';
 
@@ -107,6 +107,8 @@ export default class Service {
       return null;
     }
 
+    this.userAgentModel = new UserAgent(recipe.overrideUserAgent);
+
     this.id = data.id || this.id;
     this.name = data.name || this.name;
     this.team = data.team || this.team;
@@ -141,6 +143,8 @@ export default class Service {
 
     this.spellcheckerLanguage = data.spellcheckerLanguage !== undefined ? data.spellcheckerLanguage : this.spellcheckerLanguage;
 
+    this.userAgentPref = data.userAgentPref !== undefined ? data.userAgentPref : this.userAgentPref;
+
     this.isHibernationEnabled = data.isHibernationEnabled !== undefined ? data.isHibernationEnabled : this.isHibernationEnabled;
 
     this.recipe = recipe;
@@ -155,8 +159,6 @@ export default class Service {
     if (hibernate && hibernateOnStartup && !isActive) {
       this.isHibernating = true;
     }
-
-    this.userAgentModel = new UserAgent(recipe.overrideUserAgent);
 
     autorun(() => {
       if (!this.isEnabled) {
@@ -184,8 +186,12 @@ export default class Service {
     };
   }
 
+  @computed get isTodosService() {
+    return this.recipe.id === todosStore.todoRecipeId;
+  }
+
   get webview() {
-    if (this.recipe.id === TODOS_RECIPE_ID) {
+    if (this.isTodosService) {
       return todosStore.webview;
     }
 
@@ -239,10 +245,21 @@ export default class Service {
     return this.userAgentModel.userAgent;
   }
 
+  @computed get userAgentPref() {
+    return this.userAgentModel.userAgentPref;
+  }
+
+  set userAgentPref(pref) {
+    this.userAgentModel.userAgentPref = pref;
+  }
+
+  @computed get defaultUserAgent() {
+    return this.userAgentModel.defaultUserAgent;
+  }
+
   @computed get partition() {
     return this.recipe.partition || `persist:service-${this.id}`;
   }
-
 
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
     const webviewWebContents = webContents.fromId(this.webview.getWebContentsId());

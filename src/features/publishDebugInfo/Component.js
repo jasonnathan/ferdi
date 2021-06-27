@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import injectSheet from 'react-jss';
-import { state as ModalState } from '.';
+import { state as ModalState } from './store';
 import { sendAuthRequest } from '../../api/utils/auth';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Modal from '../../components/ui/Modal';
 import { DEBUG_API } from '../../config';
 import AppStore from '../../stores/AppStore';
+import ServicesStore from '../../stores/ServicesStore';
 
 
 const messages = defineMessages({
@@ -201,8 +202,6 @@ PublishDebugLogModal.wrappedComponent.propTypes = {
     app: PropTypes.instanceOf(AppStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    service: PropTypes.shape({
-      setActive: PropTypes.func.isRequired,
-    }).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
   }).isRequired,
 };

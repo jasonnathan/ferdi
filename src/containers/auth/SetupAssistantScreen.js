@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 
+import { RouterStore } from 'mobx-react-router';
+import { DEFAULT_TODO_RECIPE_ID, DEFAULT_TODO_SERVICE_NAME } from '../../config';
 import { sleep } from '../../helpers/async-helpers';
 import SetupAssistant from '../../components/auth/SetupAssistant';
 import ServicesStore from '../../stores/ServicesStore';
 import RecipesStore from '../../stores/RecipesStore';
-import { TODOS_RECIPE_ID } from '../../features/todos';
 import UserStore from '../../stores/UserStore';
 
 export default @inject('stores', 'actions') @observer class SetupAssistantScreen extends Component {
@@ -82,11 +83,11 @@ export default @inject('stores', 'actions') @observer class SetupAssistantScreen
       await sleep(100);
     }
 
-    // Add Franz ToDos
+    // Add todo service
     await services._createService({
-      recipeId: TODOS_RECIPE_ID,
+      recipeId: DEFAULT_TODO_RECIPE_ID,
       serviceData: {
-        name: 'Franz ToDos',
+        name: DEFAULT_TODO_SERVICE_NAME,
       },
       redirect: false,
       skipCleanup: true,
@@ -116,18 +117,13 @@ export default @inject('stores', 'actions') @observer class SetupAssistantScreen
 SetupAssistantScreen.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
     services: PropTypes.instanceOf(ServicesStore),
+    router: PropTypes.instanceOf(RouterStore).isRequired,
     recipes: PropTypes.instanceOf(RecipesStore),
     user: PropTypes.instanceOf(UserStore),
   }).isRequired,
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      invite: PropTypes.func.isRequired,
-    }).isRequired,
-    service: PropTypes.shape({
-      createService: PropTypes.func.isRequired,
-    }).isRequired,
-    recipe: PropTypes.shape({
-      install: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
+    recipe: PropTypes.instanceOf(RecipesStore).isRequired,
   }).isRequired,
 };

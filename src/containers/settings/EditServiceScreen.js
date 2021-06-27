@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
 
+import { RouterStore } from 'mobx-react-router';
 import UserStore from '../../stores/UserStore';
 import RecipesStore from '../../stores/RecipesStore';
 import ServicesStore from '../../stores/ServicesStore';
@@ -219,6 +220,11 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           options: spellcheckerLanguage,
           disabled: !stores.settings.app.enableSpellchecking,
         },
+        userAgentPref: {
+          label: intl.formatMessage(globalMessages.userAgentPref),
+          placeholder: service.defaultUserAgent,
+          value: service.userAgentPref ? service.userAgentPref : '',
+        },
       },
     };
 
@@ -410,20 +416,8 @@ EditServiceScreen.wrappedComponent.propTypes = {
     settings: PropTypes.instanceOf(SettingsStore).isRequired,
     features: PropTypes.instanceOf(FeaturesStore).isRequired,
   }).isRequired,
-  router: PropTypes.shape({
-    params: PropTypes.shape({
-      action: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
+  router: PropTypes.instanceOf(RouterStore).isRequired,
   actions: PropTypes.shape({
-    service: PropTypes.shape({
-      createService: PropTypes.func.isRequired,
-      updateService: PropTypes.func.isRequired,
-      deleteService: PropTypes.func.isRequired,
-      openRecipeFile: PropTypes.func.isRequired,
-    }).isRequired,
-    // settings: PropTypes.shape({
-    //   update: PropTypes.func.isRequred,
-    // }).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
   }).isRequired,
 };

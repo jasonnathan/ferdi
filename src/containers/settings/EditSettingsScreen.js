@@ -11,20 +11,20 @@ import Form from '../../lib/Form';
 import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
   DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, SEARCH_ENGINE_NAMES, TODO_APPS,
+  DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED, DEFAULT_IS_FEATURE_ENABLED_BY_USER,
 } from '../../config';
 import { isMac } from '../../environment';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
 import { getSelectOptions } from '../../helpers/i18n-helpers';
 import { hash } from '../../helpers/password-helpers';
+import defaultUserAgent from '../../helpers/userAgent-helpers';
 
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
 
 import globalMessages from '../../i18n/globalMessages';
-import { DEFAULT_IS_FEATURE_ENABLED_BY_USER } from '../../features/todos';
 import WorkspacesStore from '../../features/workspaces/store';
-import { DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED } from '../../features/workspaces';
 import ServicesStore from '../../stores/ServicesStore';
 
 const messages = defineMessages({
@@ -283,6 +283,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         showDragArea: settingsData.showDragArea,
         enableSpellchecking: settingsData.enableSpellchecking,
         spellcheckerLanguage: settingsData.spellcheckerLanguage,
+        userAgentPref: settingsData.userAgentPref,
         beta: settingsData.beta, // we need this info in the main process as well
         automaticUpdates: settingsData.automaticUpdates, // we need this info in the main process as well
         locale: settingsData.locale, // we need this info in the main process as well
@@ -524,6 +525,12 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           options: spellcheckingLanguages,
           default: DEFAULT_APP_SETTINGS.spellcheckerLanguage,
         },
+        userAgentPref: {
+          label: intl.formatMessage(globalMessages.userAgentPref),
+          value: settings.all.app.userAgentPref,
+          default: DEFAULT_APP_SETTINGS.userAgentPref,
+          placeholder: defaultUserAgent(),
+        },
         darkMode: {
           label: intl.formatMessage(messages.darkMode),
           value: settings.all.app.darkMode,
@@ -672,23 +679,10 @@ EditSettingsScreen.wrappedComponent.propTypes = {
     workspaces: PropTypes.instanceOf(WorkspacesStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      launchOnStartup: PropTypes.func.isRequired,
-      checkForUpdates: PropTypes.func.isRequired,
-      installUpdate: PropTypes.func.isRequired,
-      clearAllCache: PropTypes.func.isRequired,
-    }).isRequired,
-    settings: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
-    todos: PropTypes.shape({
-      toggleTodosFeatureVisibility: PropTypes.func.isRequired,
-    }).isRequired,
-    workspaces: PropTypes.shape({
-      toggleKeepAllWorkspacesLoadedSetting: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
+    settings: PropTypes.instanceOf(SettingsStore).isRequired,
+    todos: PropTypes.instanceOf(TodosStore).isRequired,
+    workspaces: PropTypes.instanceOf(WorkspacesStore).isRequired,
   }).isRequired,
 };
